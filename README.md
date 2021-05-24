@@ -1,2 +1,0 @@
-# Hellish-Fiend
-mythicmobs mob
