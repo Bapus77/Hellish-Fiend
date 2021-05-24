@@ -1,12 +1,12 @@
 Skills:
-  - Skill=s{Hellgift} @Self >700 0.1
-  - skill{s=SummonGhouls} @Self <850 0.1
+  - Skill{s=Hellgift} @Self >700 0.1
   - Skill{s=UnholyBrigade} @Self =100 0.1
   - Skill{s=SatansFlame} @PIR{r=10} >400 0.05
   - Skill{s=SinningTornado} @Self <650 0.05
   - Skill{s=UndeadSpike} @Target =400
   - Skill{s=DeathsPull} @PIR{r=20} 0.05
-  - Skill{s=SinnersGrace} @Self  ~onTimer: 
+  - Skill{s=SinnersGrace} @Self  ~onTimer: 500
+  - Skill{s=Overlord} @Target ~onTimer: 400 0.1
 
 
 Hellgift
@@ -23,7 +23,8 @@ UnholyBrigade
   Skills:
   - effect:particles{particle=crit_magic;a=70;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2} @Self
   - Skill{s=DeathylGlare} @Target
-  - Skill{s=Earthquake} @PIR
+  - Skill{s=Earthquake} @PIR{r=10}
+  - Skill{s=SummonLesserFiend} @Self
   
   
   
@@ -33,6 +34,18 @@ UnholyBrigade
    - effect:particles{particle=dragon_breath;a=100;y=1;vs=0.5;hs=0.1;s=0.1}
     
 
+Earthquake
+  Skills:
+  - damage{a=10;ia=true} @PIR{r=10}
+  -effect:particles{particle=end_rod
+  
+  
+SummonLesserFiend
+  Skills:
+  - summon{type=Lesser_Fiend;r=5;a=5;yr=0} @Self
+  - sound{entity.zombie.growl} @Self
+  
+  
 
 
 - Geyser projectile {i=1oT=GTick;oH=GHit;mr=20;toy=0.9;sE=false;v=50 @Target
@@ -42,7 +55,7 @@ UnholyBrigade
 
     - GHit:
         Skills:
-- damage {a=5;pkb=true}
+- damage{a=5;pkb=true}
 - Slow {t=100}
     
     
