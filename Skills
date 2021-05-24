@@ -31,7 +31,7 @@ UnholyBrigade
   DeathlyGlare
     Skills: 
    - projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
-   - effect:particles{particle=dragon_breath;a=100;y=1;vs=0.5;hs=0.1;s=0.1}
+   - effect:particles{particle=dragon_breath;a=100;y=1;vs=0.5;hs=0.1;s=0.1} @Self
     
 
 Earthquake
