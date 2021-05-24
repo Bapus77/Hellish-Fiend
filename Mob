@@ -1,0 +1,44 @@
+Hellish Fiend:
+  Type: ZOMBIE
+  Display: '&6Hellish Fiend'
+  Health: 800
+  Damage: 15
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  - 2 meleeattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 hurtbytarget
+  - 2 threatholder
+  - 3 players
+  Conditions:
+  - offgcd true
+  Skills:
+  - message{m="<mob.name><&co> Who would dare drag me to this Pitiful realm?!"} @PlayersInRadius{r=50} ~onSpawn
+  - Skill=s{Hellgift} @Self >700 0.1
+  - potion{type=WEAKNESS;d=20;l=2} @LivingEntitiesInRadius{r=10} 0.15
+  - potion{type=BLINDNESS;d=10;l=3} @LivingEntitiesInRadius{r=10} 0.15
+  - skill{s=SummonGhouls} @Self <850 0.1
+  - ignite{t=160} @LivingEntitiesInRadius{r=7} <600 0.25
+  - Skill{s=UnholyBrigade} @Self =100 0.1
+  - Skill{s=SatansFlame} @PIR{r=10} >400 0.05
+  - Skill{s=SinningTornado} @Self <650 0.05
+  - Skill{s=UndeadSpike} @Target =400
+  - Skill{s=DeathsPull} @PIR{r=20} 0.05
+  - Skill{s=SinnersGrace} @Self  ~onTimer: 
+  Options:
+    Disguise: WITHER_SKELETON
+    MovementSpeed: 0.35
+    FollowRange: 45
+    AlwaysShowName: true
+    KnockbackResistance: 1
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICKS 0
+  - LAVA 0
+  Drops:
+  - Demon_Flesh 4to10 1
+  - Fiendish_Necklace 1 0.2
+  - Strange_Fruit 1to3 0.8
+
