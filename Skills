@@ -21,23 +21,23 @@ Hellgift
   
 UnholyBrigade 
   Skills:
-  - effect:particles{particle=crit_magic;a=70;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2} @Self
+  - effect:particles{particle=cloud;a=70;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2} @Self
   - Skill{s=DeathylGlare} @Target
   - Skill{s=Earthquake} @PIR{r=10}
   - Skill{s=SummonLesserFiend} @Self
   
   
   
-  DeathlyGlare
-    Skills: 
-   - projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
-   - effect:particles{particle=dragon_breath;a=100;y=1;vs=0.5;hs=0.1;s=0.1} @Self
-    
+DeathlyGlare
+  Skills: 
+  - projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
+  - effect:particles{particle=dragon_breath;a=100;y=0;vs=0.5;hs=0.2;s=0.5} @Target
+
 
 Earthquake
   Skills:
   - damage{a=10;ia=true} @PIR{r=10}
-  -effect:particles{particle=end_rod
+  -effect:particles{particle=end_rod;a=100;y=0;vs=0.2;hs=0.2;s=0.5} @Self
   
   
 SummonLesserFiend
@@ -48,15 +48,7 @@ SummonLesserFiend
   
 
 
-- Geyser projectile {i=1oT=GTick;oH=GHit;mr=20;toy=0.9;sE=false;v=50 @Target
-- GTick:
-            Skills:
-- Effect particles{particle=Splash;a=30;s=0.05;hs=0.3;vs=0.1} @Origin
 
-    - GHit:
-        Skills:
-- damage{a=5;pkb=true}
-- Slow {t=100}
     
     
     
