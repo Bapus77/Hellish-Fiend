@@ -26,7 +26,8 @@ Hellish Fiend:
   - Skill{s=SinningTornado} @Self <650 0.05
   - Skill{s=UndeadSpike} @Target =400
   - Skill{s=DeathsPull} @PIR{r=20} 0.05
-  - Skill{s=SinnersGrace} @Self  ~onTimer: 
+  - Skill{s=SinnersGrace} @Self  ~onTimer:800
+  - Skill{s=Overlord} @Target onTimer:1000
   Options:
     Disguise: WITHER_SKELETON
     MovementSpeed: 0.35
