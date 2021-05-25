@@ -53,7 +53,7 @@ Overlord
   
 Laser:
   Skills:
-  - projectile{i=1;oT=LaserTick;oH=LaserHit;mr=5;sE=false;v=100} @Target
+  - projectile{i=1;oT=LaserTick;oH=LaserHit;oE=LaserEnd;mr=5;sE=false;v=100} @Target
 LaserTick:
   Skills:
   - effect:particlering{p=flame;r=5;points=40} @origin
@@ -61,11 +61,15 @@ LaserTick:
   - delay 20
 LaserHit:
   Skills:
-  - damage{a=20;pkb=true}
+  - damage{ia=true;a=20;pkb=true}
   - ignite{t=100}
   - stun{d=100;f=true} @origin
-  - effect:particles{p=explosion_huge
-    
+  - effect:explosion @PIR{r=10}
+  - damage{a=30;pkb=false}
+LaserEnd:
+  Skills:
+  - potion{tpye:SLOW;d=10;l=2} @Target
+  - potion{type:
     
     
     
