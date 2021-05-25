@@ -13,7 +13,6 @@ Skills:
   - Skill{s=Overlord} @Target ~onTimer: 400 0.1
   - Skill{s=GrimacingScythe} @Target 0.1
 
-
 Hellgift
   Skills:
   - potion{type:INSTANT_HEALTH;d=1;l=10} @Self
@@ -83,10 +82,8 @@ Combust
   - damage{ia=true;a=5;r=6}
   - delay 1
   
-  
- 
-  
-
+BackHand
+  Skills:
   - teleport @EIR{r=5;limit=1;sort=RANDOM;types=players}
   - effect:particles{p=explosion_medium;a=15} @EIR{r=5;limit=1;sort=NEAREST;types=players}
   - effect:particles{p=crit_magic;amount=2;y=1.5} @self
