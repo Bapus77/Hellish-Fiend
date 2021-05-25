@@ -51,8 +51,8 @@ Combust
   
   
 
-teleport{spreadh=1;spreadv=0} @EntitiesInRadius{r=5;limit=1;sort=RANDOM;types=players}
-  - effect:particles{p=explosion_large;amount=1} @EntitiesInRadius{r=2;limit=1;sort=NEAREST;types=players}
+  - teleport{hs=1;vs=0} @EntitiesInRadius{r=5;limit=1;sort=RANDOM;types=players}
+  - effect:particles{p=explosion_large;a=5} @EntitiesInRadius{r=2;limit=1;sort=NEAREST;types=players}
   - effect:particles{p=crit_magic;amount=2;y=1.5} @self
   - damage{a=5} @EntitiesInRadius{r=2;limit=1;sort=NEAREST;types=players}
   - sound{s=entity.blaze.shoot} @self
