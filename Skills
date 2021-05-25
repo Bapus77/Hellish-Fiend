@@ -46,10 +46,25 @@ SummonLesserFiend
   - sound{entity.zombie.growl} @Self
   
   
-
-
-
-    
+Overlord
+  Skills:
+  Skill{s=Laser} @Target
+  
+  
+Laser:
+  Skills:
+  - projectile{i=1;oT=LaserTick;oH=LaserHit;mr=5;sE=false;v=100} @Target
+LaserTick:
+  Skills:
+  - effect:particlering{p=flame;r=5;points=40} @origin
+  - effect:particles{particle=totem;a=20;s=0.5;hs=0.1;vs=0.1} @origin
+  - delay 20
+LaserHit:
+  Skills:
+  - damage{a=20;pkb=true}
+  - ignite{t=100}
+  - stun{d=100;f=true} @origin
+  - effect:particles{p=explosion_huge
     
     
     
