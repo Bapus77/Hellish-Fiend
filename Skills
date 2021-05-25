@@ -33,7 +33,7 @@ Combust
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
   
-  DeathRings
+DeathRings
   Skills:
   - message{m="<mob.name><&co> All those who are near me..."} @PlayersInRadius{r=40}
   - message{m="<mob.name><&co> DIE"} @PlayersInRadius{r=40}
