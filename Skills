@@ -12,11 +12,54 @@ Skills:
 Hellgift
   Skills:
   - potion{type:INSTANT_HEALTH;d=1;l=10} @Self
-  - potion{type:STRENGTH;d=50;l=50} @Self
+  - potion{type:INCREASE_DAMAGE;d=50;l=50} @Self
   - effect:particles{particle=flame;a=50;hs=0.2;vs=0.8;y=1;s=0.1}
   - sound{entity.end.rod} @Self
   - Skill{s=Combust} @Self
   
+Combust
+  Skills:
+  - sound{block.tnt.explode} @Self
+  - 
+  
+  
+  GreenCastSelf:
+  Skills:
+  - effect:particlering{particle=reddust;radius=1.3;points=32;amount=1;hS=1;vS=0;color=#15e8db} @self
+  - delay 1
+  - effect:particlering{particle=reddust;radius=1.1;points=32;amount=1;hS=1;vS=0;y=0.1;color=#33cc99} @self
+  - delay 1
+  - effect:particlering{particle=reddust;radius=1;points=32;amount=1;hS=1;vS=0;y=0.3;color=#ccff66} @self
+  - delay 1
+  - effect:particlering{particle=reddust;radius=1;points=32;amount=1;hS=1;vS=0;y=0.5;color=#ccff66} @self
+  - effect:particlering{particle=reddust;radius=1;points=32;amount=1;hS=1;vS=0;y=0.8;color=#ccff66} @self
+  - delay 1
+  - effect:particlering{particle=reddust;radius=1.1;points=16;amount=1;hS=1;vS=0;y=1.1;color=#33cc99} @self
+  - effect:particlering{particle=reddust;radius=1.3;points=8;amount=1;hS=1;vS=0;y=1.4;color=#15e8db} @self
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+teleport{spreadh=1;spreadv=0} @EntitiesInRadius{r=5;limit=1;sort=RANDOM;types=players}
+  - effect:particles{p=explosion_large;amount=1} @EntitiesInRadius{r=2;limit=1;sort=NEAREST;types=players}
+  - effect:particles{p=crit_magic;amount=2;y=1.5} @self
+  - damage{a=5} @EntitiesInRadius{r=2;limit=1;sort=NEAREST;types=players}
+  - sound{s=entity.blaze.shoot} @self
+
+
+
+
   
   
 UnholyBrigade 
@@ -96,9 +139,12 @@ Overlord2
  
 SatansFlame:
   Skills:
+  - effect:particles{particle=reddust;a=50;hs=1;vs=0.2;y=2} @Self
   - ignite{d=300} @PIR{r=20}
-  - message{m="<mob.name><&co> Burn, begone back into the filth of this planet that gave birth to your kind. *Spitting Sound*"} @PlayersInRadius{r=40} 
-  - effect:particleline{p=flame;
+  - message{m="<mob.name><&co> Burn, begone back into the filth of this planet that gave birth to your kind."} @PlayersInRadius{r=40} 
+  - sound{s=entity.zombie.growl} @Self
+  - sound{s=entity.ghast.shoot} @Self
+  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=0.5;tyo=1.5} @Target
     
     
     
