@@ -94,9 +94,11 @@ Overlord2
   - ignite{t=100}
 
  
-    
-    
-    
+SatansFlame:
+  Skills:
+  - ignite{d=300} @PIR{r=20}
+  - message{m="<mob.name><&co> Burn, begone back into the filth of this planet that gave birth to your kind. *Spitting Sound*"} @PlayersInRadius{r=40} 
+  - effect:particleline{p=flame;
     
     
     
