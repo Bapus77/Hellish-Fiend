@@ -25,8 +25,14 @@ Hellgift
 Combust
   Skills:
   - sound{block.tnt.explode} @Self
-  - 
-  
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
   
   DeathRings
   Skills:
@@ -78,61 +84,43 @@ Combust
   - delay 1
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
   
 
-  - teleport{hs=1;vs=0} @EntitiesInRadius{r=5;limit=1;sort=RANDOM;types=players}
-  - effect:particles{p=explosion_large;a=5} @EntitiesInRadius{r=2;limit=1;sort=NEAREST;types=players}
+  - teleport @EIR{r=5;limit=1;sort=RANDOM;types=players}
+  - effect:particles{p=explosion_medium;a=15} @EIR{r=5;limit=1;sort=NEAREST;types=players}
   - effect:particles{p=crit_magic;amount=2;y=1.5} @self
-  - damage{a=5} @EntitiesInRadius{r=2;limit=1;sort=NEAREST;types=players}
-  - sound{s=entity.blaze.shoot} @self
+  - damage{a=7} @EIR{r=2;limit=1;sort=NEAREST;types=players}
+  - sound{s=entity.ghast.shoot} @self
+  - sound{s=entity.ghast.shoot} @self
+  - sound{s=entity.ghast.shoot} @self
 
-
-
-
-  
-  
 UnholyBrigade 
   Skills:
   - effect:particles{particle=cloud;a=70;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2} @Self
-  - Skill{s=DeathylGlare} @Target
+  - Skill{s=DeathylGlance} @Target
   - Skill{s=Earthquake} @PIR{r=10}
   - Skill{s=SummonLesserFiend} @Self
-  
-  
-  
-DeathlyGlare
+
+DeathlyGlance
   Skills: 
   - projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
   - effect:particles{particle=dragon_breath;a=100;y=0;vs=0.5;hs=0.2;s=0.5} @Target
-
 
 Earthquake
   Skills:
   - damage{a=10;ia=true} @PIR{r=10}
   - effect:particles{particle=end_rod;a=100;y=0;vs=0.2;hs=0.2;s=0.5} @Self
   
-  
 SummonLesserFiend
   Skills:
   - summon{type=Lesser_Fiend;r=5;a=5;yr=0} @Self
-  - sound{entity.zombie.growl} @Self
-  
-  
+  - sound{entity.baby.zombie.growl} @Self
+
 Overlord
   Skills:
   Skill{s=Laser} @Target
-  
-  
+
 Laser:
   Skills:
   - projectile{i=1;oT=LaserTick;oH=LaserHit;oE=LaserEnd;mr=5;sE=false;v=100} @Target
@@ -153,15 +141,13 @@ LaserEnd
   Skills:
   - Skill{s=Overlord2} @PIR{r=20}
   
-
 Overlord2
   Skills:
   - effect{effect=enderbeam;d=5} @PIR{r=20}
   - damage{ia=true;a=2}
   - Skill{s=FireballBarage} @PIR{r=20}
-  
-  
-  FireballBarrage:
+
+FireballBarrage:
   Skills:
   - shootfireball{y=1.3;v=40} @target
   - damage{a=5;pkb=true}
@@ -175,7 +161,6 @@ Overlord2
   - damage{a=5;pkb=true}
   - ignite{t=100}
 
- 
 SatansFlame:
   Skills:
   - effect:particles{particle=reddust;a=50;hs=1;vs=0.2;y=2} @Self
