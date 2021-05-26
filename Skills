@@ -160,12 +160,14 @@ FireballBarrage:
 
 SatansFlame:
   Skills:
-  - effect:particles{particle=reddust;a=50;hs=1;vs=0.2;y=2} @Self
-  - ignite{d=300} @PIR{r=20}
+  - effect:particles{particle=reddust;a=50;hs=1;vs=0.2;y=0} @Self
+  - delay 10
+  - ignite{d=300} @PIR{r=5}
   - message{m="<mob.name><&co> Burn, begone back into the filth of this planet that gave birth to your kind."} @PlayersInRadius{r=40} 
   - sound{s=entity.zombie.growl} @Self
   - sound{s=entity.ghast.shoot} @Self
-  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=0.5;tyo=1.5} @Target
+  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=2;tyo=1.5} @EIR{r=20}
+  - Skill{s=DemonicBurn}
     
     
     
