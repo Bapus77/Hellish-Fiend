@@ -5,7 +5,7 @@
 Skills:
   - Skill{s=Hellgift} @Self >700 0.1
   - Skill{s=UnholyBrigade} @Target =100
-  - Skill{s=SatansRage} @PIR{r=10} >400 0.05
+  - Skill{s=LucifersRage} @PIR{r=10} >400 0.05
   - Skill{s=SinningTornado} @Self <650 0.05
   - Skill{s=UndeadSpike} @Target =400
   - Skill{s=DeathsPull} @PIR{r=20} 0.05
@@ -94,7 +94,8 @@ BackHand
 
 UnholyBrigade 
   Skills:
-  - effect:particles{particle=cloud;a=70;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2} @Self
+  - effect:particles{particle=cloud;a=70;mr=10;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2;d=5} @Self
+  - damage{a=10}
   - Skill{s=DeathylGlance} @Target
   - Skill{s=Earthquake} @PIR{r=10}
   - Skill{s=SummonLesserFiend} @Self
@@ -158,7 +159,7 @@ FireballBarrage:
   - damage{a=5;pkb=true}
   - ignite{t=100}
 
-SatansRage:
+LucifersRage:
   Skills:
   - effect:particles{particle=reddust;a=50;hs=1;vs=0.2;y=0} @Self
   - delay 10
@@ -167,13 +168,21 @@ SatansRage:
   - sound{s=entity.zombie.growl} @Self
   - sound{s=entity.ghast.shoot} @Self
   - Skill{s=DemonicBurn} @Target
-    
-    
-    
+  
 DemonicBurn
   Skills:
-  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=0.4;tyo=1.5;xo=3;yo=1.5} @Self
+  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=0.4;tyo=1.5;xo=3;y=1.5} @Self
+  - ignite{d=50}
+  - damage{a=20}
   - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=0.4;vs=5;tyo=1.5;xo=3} @Self
+  - ignite{d=50}
+  - damage{a=20}
+  - effect:enderbeam;p=crit_magic;a=50;s=1;hs=0.3;vs=0.8;y=1.3} @Target
+  - ignite{d=120}
+  - damage{a=20;pkb=true}
+  - effect:geyser{type=LAVA;height=10;speed=15} @Target
+  - ignite{d=175}
+  - damage{ia=true;a=1.5;pkb=true}
     
     
     
