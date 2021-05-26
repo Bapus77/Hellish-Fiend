@@ -25,12 +25,19 @@ Combust
   Skills:
   - sound{block.tnt.explode} @Self
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
+  - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
   
 DeathRings
@@ -80,14 +87,13 @@ DeathRings
   - effect:particlering{particle=reddust;radius=6;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
   - ignite{d=100;r=6}
   - damage{ia=true;a=5;r=6}
-  - delay 1
   
 BackHand
   Skills:
-  - teleport @EIR{r=5;limit=1;sort=RANDOM;types=players}
-  - effect:particles{p=explosion_medium;a=15} @EIR{r=5;limit=1;sort=NEAREST;types=players}
+  - teleport @PIR{r=10;limit=1}
+  - effect:particles{p=explosion_medium;a=15} @EIR{r=5;limit=1}
   - effect:particles{p=crit_magic;amount=2;y=1.5} @self
-  - damage{a=7} @EIR{r=2;limit=1;sort=NEAREST;types=players}
+  - damage{a=7} @PIR{r=10;limit=1}
   - sound{s=entity.ghast.shoot} @self
   - sound{s=entity.ghast.shoot} @self
   - sound{s=entity.ghast.shoot} @self
@@ -97,7 +103,7 @@ UnholyBrigade
   - effect:particles{particle=cloud;a=70;mr=10;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2;d=5} @Self
   - damage{a=10}
   - Skill{s=DeathylGlance} @Target
-  - Skill{s=Earthquake} @PIR{r=10}
+  - Skill{s=Earthquake} @PIR{r=7}
   - Skill{s=SummonLesserFiend} @Self
 
 DeathlyGlance
@@ -107,8 +113,10 @@ DeathlyGlance
 
 Earthquake
   Skills:
-  - damage{a=10;ia=true} @PIR{r=10}
   - effect:particles{particle=end_rod;a=100;y=0;vs=0.2;hs=0.2;s=0.5} @Self
+  - damage{a=10;ia=true} @PIR{r=7}
+  - effect:particletornado{p=falling_dust;cp=largeexplode;mr=2.2;h=4;i=4;d=100;rs=1;sh=1;cs=0;ca=0;chs=0.1;cvs=0.1;cps=1;cyo=2} @Self
+  - potion{type=DAMAGE_RESISTANCE;d=100;l=6} @Self
   
 SummonLesserFiend
   Skills:
@@ -117,7 +125,7 @@ SummonLesserFiend
 
 Overlord
   Skills:
-  Skill{s=Laser} @Target
+  - Skill{s=Laser} @Target
 
 Laser:
   Skills:
