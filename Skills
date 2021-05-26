@@ -5,7 +5,7 @@
 Skills:
   - Skill{s=Hellgift} @Self >700 0.1
   - Skill{s=UnholyBrigade} @Target =100
-  - Skill{s=SatansFlame} @PIR{r=10} >400 0.05
+  - Skill{s=SatansRage} @PIR{r=10} >400 0.05
   - Skill{s=SinningTornado} @Self <650 0.05
   - Skill{s=UndeadSpike} @Target =400
   - Skill{s=DeathsPull} @PIR{r=20} 0.05
@@ -158,7 +158,7 @@ FireballBarrage:
   - damage{a=5;pkb=true}
   - ignite{t=100}
 
-SatansFlame:
+SatansRage:
   Skills:
   - effect:particles{particle=reddust;a=50;hs=1;vs=0.2;y=0} @Self
   - delay 10
@@ -166,9 +166,14 @@ SatansFlame:
   - message{m="<mob.name><&co> Burn, begone back into the filth of this planet that gave birth to your kind."} @PlayersInRadius{r=40} 
   - sound{s=entity.zombie.growl} @Self
   - sound{s=entity.ghast.shoot} @Self
-  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=2;tyo=1.5} @EIR{r=20}
-  - Skill{s=DemonicBurn}
+  - Skill{s=DemonicBurn} @Target
     
+    
+    
+DemonicBurn
+  Skills:
+  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=0.4;tyo=1.5;xo=3;yo=1.5} @Self
+  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=0.4;vs=5;tyo=1.5;xo=3} @Self
     
     
     
