@@ -191,6 +191,25 @@ DemonicBurn
   - effect:geyser{type=LAVA;height=10;speed=15} @Target
   - ignite{d=175}
   - damage{ia=true;a=1.5;pkb=true}
+
+BleedingChampion:
+    Cooldown: 1
+    Conditions:
+    - targetwithin{d=5}
+    - targetinlineofsight true
+    Skills:
+    - GCD{ticks=120}
+    - message{m="You begin bleeding."} @target
+    - sound{s=damage.hit} @target
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
     
     
     
