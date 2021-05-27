@@ -212,8 +212,26 @@ BleedingChampion:
     - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
     
     
+ExplosionChampion:
+    Cooldown: 30
+    Conditions:
+    - offgcd
+    Skills:
+    - message{m="<mob.name>&f<&co> Your heart is about to burst!"} @PlayersInRadius{r=40}
+    - delay 10
+    - explosion{yield=6;bd=true;fire=true} @Target
+    - GCD{ticks=120}
     
     
+    
+GrimazingScythe
+  Skills:
+  - message{m="<mob.name>&f<&co> Now watch your friend fly into the sunset!"} @PlayersInRadius{r=40}
+  - delay 5
+  - potion{type:LEVITATION;d=2;l=15} @PIR{r=10;limit=1} 
+  - message{m="<mob.name>&f<&co> Your friend is far away"} @PlayersInRadius{r=40}
+  - message{m="<mob.name>&f<&co> But you're not safe yet"} @PlayersInRadius{r=40}
+  - effect:particles{p=explosion_small;a=30
     
     
     
