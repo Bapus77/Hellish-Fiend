@@ -239,7 +239,15 @@ GrimazingScythe
   - delay 20
   - damage{ia=true;a=20;pi=false}
   - delay 25
-  - effect:particlesphere{p=portal;r=3;y=1.9;xo=} @Self
+  - effect:particlesphere{p=portal;r=3;y=1.9;xo=4;d=10} @Self
+  - delay 10
+  - Skill{s=Enderbeam} @Target
+  
+  
+  
+Enderbeam
+  Skills:
+  - effect{effect=enderbeam;d=7;xo=
     
     
     
