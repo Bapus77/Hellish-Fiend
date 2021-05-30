@@ -10,7 +10,7 @@ Skills:
   - Skill{s=UndeadSpike} @Target =400
   - Skill{s=DeathsPull} @PIR{r=20} 0.05
   - Skill{s=SinnersGrace} @Self  ~onTimer: 800
-  - Skill{s=Overlord} @Target ~onTimer: 400 0.1
+  - Skill{s=Overlord} @Target 0.1
   - Skill{s=GrimacingScythe} @Target 0.1
 
 Hellgift
@@ -124,12 +124,14 @@ SummonLesserFiend
   - sound{entity.baby.zombie.growl} @Self
 
 Overlord
+  Conditions:
+  - Cooldown: 40
   Skills:
   - Skill{s=Laser} @Target
 
 Laser:
   Skills:
-  - projectile{i=1;oT=LaserTick;oH=LaserHit;oE=LaserEnd;mr=5;sE=false;v=100} @Target
+  - projectile{i=1;type=totem;oT=LaserTick;oH=LaserHit;oE=LaserEnd;mr=5;sE=false;v=100} @Target
 LaserTick:
   Skills:
   - effect:particlering{p=flame;r=5;points=40} @origin
@@ -201,15 +203,16 @@ BleedingChampion:
     - GCD{ticks=120}
     - message{m="You begin bleeding."} @target
     - sound{s=damage.hit} @target
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target 
     - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
     - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
     - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
     - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
     - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    
+    
     
     
 ExplosionChampion:
@@ -222,20 +225,32 @@ ExplosionChampion:
     - explosion{yield=6;bd=true;fire=true} @Target
     - GCD{ticks=120}
     
-    
-    
 GrimazingScythe
   Skills:
-  - message{m="<mob.name>&f<&co> Now watch your friend fly into the sunset!"} @PlayersInRadius{r=40}
+  - message{m="<mob.name>&f<&co> Now watch your friend fly into the sunset!"} @PIR{r=40}
   - delay 5
   - potion{type:LEVITATION;d=2;l=15} @PIR{r=10;limit=1} 
-  - message{m="<mob.name>&f<&co> Your friend is far away"} @PlayersInRadius{r=40}
-  - message{m="<mob.name>&f<&co> But you're not safe yet"} @PlayersInRadius{r=40}
-  - effect:particles{p=explosion_small;a=30
+  - message{m="<mob.name>&f<&co> Your friend is far away"} @PIR{r=40}
+  - message{m="<mob.name>&f<&co> But you're not safe yet"} @PIR{r=40}
+  - explosion{yield=4;bd=true;fire=true} @Target
+  - delay 10
+  - effect:particlesphere{p=crit;r=2;y=1;c=#FF55FF} @Target
+  - message{m="player.name&f<fco> Nanni?!"} @PIR
+  - delay 20
+  - damage{ia=true;a=20;pi=false}
+  - delay 25
+  - effect:particlesphere{p=portal;r=3;y=1.9;xo=} @Self
     
     
     
+    dehydration
     
     
-    
-    
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target 
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
+    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
