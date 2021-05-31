@@ -194,23 +194,7 @@ DemonicBurn
   - ignite{d=175}
   - damage{ia=true;a=1.5;pkb=true}
 
-BleedingChampion:
-    Cooldown: 1
-    Conditions:
-    - targetwithin{d=5}
-    - targetinlineofsight true
-    Skills:
-    - GCD{ticks=120}
-    - message{m="You begin bleeding."} @target
-    - sound{s=damage.hit} @target
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target 
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+
     
     
     
@@ -235,6 +219,8 @@ GrimazingScythe
   - explosion{yield=4;bd=true;fire=true} @Target
   - delay 10
   - effect:particlesphere{p=crit;r=2;y=1;c=#FF55FF} @Target
+  - message{m="<mob.name>&f<f&co> BEGONE"} @PIR{r=40}
+  - stun{d=100;f=true} @Target
   - message{m="player.name&f<fco> Nanni?!"} @PIR
   - delay 20
   - damage{ia=true;a=20;pi=false}
@@ -243,16 +229,12 @@ GrimazingScythe
   - delay 10
   - Skill{s=Enderbeam} @Target
   
-  
-  
 Enderbeam
   Skills:
   - effect{effect=enderbeam;d=7;xo=4;y=1.2} @Target
   - damage{ia=true;a=2;pi=true;pkb=true}
   - effect:particles{p=dust;c=#FF5555}
-  - potion{
-    
-    
+  - potion{type:INSTANT_HEALTH;d=3;l=2} @Self ~onTimer:20
     
     dehydration
     
