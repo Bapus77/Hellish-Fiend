@@ -228,6 +228,7 @@ GrimazingScythe
   - effect:particlesphere{p=portal;r=3;y=1.2;xo=4;d=10} @Self
   - delay 10
   - Skill{s=Enderbeam} @Target
+  - Skill {s=Dehydration} @EIR{r=10;limit=3}
   
 Enderbeam
   Skills:
@@ -236,14 +237,23 @@ Enderbeam
   - effect:particles{p=dust;c=#FF5555}
   - potion{type:INSTANT_HEALTH;d=3;l=2} @Self ~onTimer:20
     
-    dehydration
-    
-    
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target 
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
-    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @Target
-    - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+dehydration
+  Skills:
+  - effect:particlesphere{p=dripWater;r=3;y=1.2;d=10} @Target
+  - delay 20
+  - effect:particles{particle=dripWater;amount=5;hS=1;vS=1;speed=5} @Target 
+  - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+  - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+  - effect:particles{particle=dripWater;amount=5;hS=1;vS=1;speed=5} @Target
+  - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+  - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+  - effect:particles{particle=dripWater;amount=5;hS=1;vS=1;speed=5} @Target
+  - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+  - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
+  - effect:particles{particle=dripWater;amount=5;hS=1;vS=1;speed=5} @Target
+  - potion{type:REGENERATION;d=5;l=3} @Self
+
+
+
+
+
