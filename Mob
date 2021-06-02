@@ -34,6 +34,14 @@ Hellish Fiend:
     FollowRange: 45
     AlwaysShowName: true
     KnockbackResistance: 1
+  BossBar:
+      Enabled: true
+      Title: '&eLieutenant Iqueo'
+      Range: 50
+      Color: YELLOW
+      Style: SEGMENTED_6
+      CreateFog: true
+      DarkenSky: true
   DamageModifiers:
   - FIRE 0
   - FIRE_TICKS 0
