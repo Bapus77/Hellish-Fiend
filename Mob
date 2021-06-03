@@ -12,8 +12,6 @@ Hellish Fiend:
   - 1 hurtbytarget
   - 2 threatholder
   - 3 players
-  Conditions:
-  - offgcd true
   Skills:
   - message{m="<mob.name><&co> Who would dare drag me to this Pitiful realm?!"} @PlayersInRadius{r=50} ~onSpawn
   - Skill=s{Hellgift} @Self >700 0.1
@@ -36,16 +34,16 @@ Hellish Fiend:
     KnockbackResistance: 1
   BossBar:
       Enabled: true
-      Title: '&eLieutenant Iqueo'
+      Title: '&6Hellish Fiend'
       Range: 50
-      Color: YELLOW
+      Color: RED
       Style: SEGMENTED_6
-      CreateFog: true
       DarkenSky: true
   DamageModifiers:
   - FIRE 0
   - FIRE_TICKS 0
   - LAVA 0
+  - DROWN 2
   Drops:
   - Demon_Flesh 4to10 1
   - Fiendish_Necklace 1 0.2
