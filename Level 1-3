@@ -245,3 +245,105 @@ Sacrifice:
   - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
   - damage{a=15} @PIR{r=8}
   
+
+  Level 1:
+
+CoolZombie:
+  Type: ZOMBIE
+  Display: '&eWeakling'
+  Health: 80
+  Damage: 4
+  Armor: 5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  - 2 meleeattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 threatholder
+  Skills:
+  - Skill{s=Arrow} @Target
+  - Skill{s=Screech} @EIR{r=10} <75%
+  - Skill{s=Run} @Self
+  - Skill{s=Swipe} @Target
+  - Skill{s=Sacrifice} @Self ~onDeath
+  Options:
+    MovementSpeed: 0.47
+    FollowRange: 20
+    AlwaysShowName: true
+    KnockbackResistance: 0.2
+  BossBar:
+    Enabled: true
+    Title: '&6Weakling'
+    Range: 50
+    Color: GREEN
+    Style: SOLID
+  DamageModifiers:
+  - FIRE 1.2
+  - FIRE_TICKS 1.2
+  - LAVA 2
+  Drops:
+  - Dark_Key{display 1 0.1
+  - ZombieDrops 1
+  - exp 400 1
+  
+  
+Arrow:
+  Conditions:
+  - LineOfSight true
+  Skills:
+  - projectile{onTick=ATick;onHit=AHit;onEnd=AEnd;v=15;i=1;hR=0.5;vR=0.5} @Target
+ATick:
+  Skills:
+  - effect:particebox{p=current_down;a=50;r=2;y=1} @Target 
+  - delay 5
+  - effect:enderbeam{p=portal;c=#AA0000;a=50;hS=0.2;vS=1;d=40} @Target
+  - stun{d=20}
+AHit:
+  Skills:
+  - damage{ia=true;a=0.5}
+AEnd:
+  Skills:
+  - effect:particlesphere{p=item_crack;a=20}
+  
+Screech:
+  Skills:
+  - sound{entity.ghast.shoot;p=10;v=4} @EIR{r=20}
+  - potion{tpye:CONFUSION;d=10;l=2} @PIR{r=15}
+  - damage{a=5;pkb=true} @PIR{r=10}
+  
+Run:
+  Skills:
+  - teleport @PIR{r=10;xo=7;limit=1}
+  - teleport @PIR{r=10;xo=-7limit=1}
+  - teleport @PIR{r=10;zo=7;limit=1}
+  - teleport @PIR{r=10;zo=-6limit=1}
+  - potion{type:SPEED;d=5;l=1} @Self
+  
+Swipe:
+  Conditions:
+  - PlayerWithin{d=5} true
+  Skills:
+  - dropitem{i=HAND} @PIR{r=5}
+  - effect:particlesphere{p=redstone;a=40;r=4;y=2} @Self
+  
+Sacrifice:
+  Skills:
+  - sound{block.tnt.explode} @Self
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magci;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - damage{a=15} @PIR{r=8}
