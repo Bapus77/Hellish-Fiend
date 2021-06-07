@@ -205,8 +205,12 @@ Acid:
   - potion{type:POISON;d=20;l=3} @PIR{r=10}
 
 SummonWeakling:
+  Conditions:
+  - mobsInRadius{types=CoolZombie;amount=0;radius=100}
+  - mobsInRadius{types=Wither_Chad;amount=0;radius=100}
   Skills:
-  - summon{type=COOLZOMBIE,a=4;r=6;y=1} @Self
+  - summon{type=COOLZOMBIE;a=4;r=6;y=1} @Self
+  - summon{type=WITHER_CHAD;a=3;r=3;y=1}
   
 SumoSmash:
   Cooldown: 20
