@@ -14,7 +14,7 @@ FreezingZombie:
   - 2 threatholder
   Skills:
   - Skill{s=SpeedingStrike} @Target
-  - Skill{s=Acid} @EIR{r=10} <75%
+  - Skill{s=Acid} @EIR{r=10} <30%
   - Skill{s=SummonWeakling} @Self
   - Skill{s=SumoSmash} @Target 
   - Skill{s=Swipe} @Target
@@ -24,6 +24,7 @@ FreezingZombie:
     FollowRange: 30
     AlwaysShowName: true
     KnockbackResistance: 0.3
+    ShowHealth: true
   BossBar:
     Enabled: true
     Title: '&6Guard'
@@ -42,45 +43,31 @@ FreezingZombie:
   
 SpeedingStrike:
   Skills:
-
-Arrow:
-  Conditions:
-  - LineOfSight true
-  Skills:
-  - projectile{onTick=ATick;onHit=AHit;onEnd=AEnd;v=15;i=1;hR=0.5;vR=0.5} @Target
-ATick:
-  Skills:
-  - effect:particebox{p=current_down;a=50;r=2;y=1} @Target 
+  - effect:particles{p=villager_angry;c=#FFFFFF;a=20;s=0;hS=0.2;vS=0.1} @origin
+  - damage{a=14} 
   - delay 5
-  - effect:enderbeam{p=portal;c=#AA0000;a=50;hS=0.2;vS=1;d=40} @Target
-  - stun{d=20}
-AHit:
-  Skills:
-  - damage{ia=true;a=0.5}
-AEnd:
-  Skills:
-  - effectLparticlesphere{p=item_crack;a=20}
+  - teleport @Target{xo=5}
+  - effect:particles{p=villager_angry;c=#FFFFFF;a=20;s=0;hS=0.2;vS=0.1} @origin
+  - damage{a=14} 
   
-Screech:
+Acid:
+  Conditions:
+  - TargetInLineOfSight true
+  - PlayerWithin{r=6} true
   Skills:
-  - sound{entity.ghast.shoot;p=10;v=4} @EIR{r=20}
-  - potion{tpye:CONFUSION;d=10;l=2} @PIR{r=15}
-  - damage{a=5;pkb=true} @PIR{r=10}
+  - effect:particles{p=squid_ink;c=#AA0000;a=30;y=0.15;xo=-1;zo=0.2} @Target
+  - potion{type:POISON;d=20;l=3} @PIR{r=10}
+
+
   
-Run:
-  Skills:
-  - teleport @PIR{r=10;xo=7;limit=1}
-  - teleport @PIR{r=10;xo=-7limit=1}
-  - teleport @PIR{r=10;zo=7;limit=1}
-  - teleport @PIR{r=10;zo=-6limit=1}
-  - potion{type:SPEED;d=5;l=1} @Self
-  
+
 Swipe:
   Conditions:
   - PlayerWithin{r=5} true
   Skills:
   - dropitem{i=HAND} @PIR{r=5}
-  - effect:particlesphere{p=redstone;a=40;r=4;y=2} @Self
+  - dropitem{i=CHEST} @PIR{r=5}
+  - effect:particlesphere{p=redstone;a=40;r=4;y=2;d=10} @Self
   
 Sacrifice:
   Skills:
