@@ -73,7 +73,7 @@ Run:
   
 Swipe:
   Conditions:
-  - PlayerWithin{r=5} true
+  - PlayerWithin{d=5} true
   Skills:
   - dropitem{i=HAND} @PIR{r=5}
   - effect:particlesphere{p=redstone;a=40;r=4;y=2} @Self
