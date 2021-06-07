@@ -66,7 +66,11 @@ SumoSmash:
   Cooldown: 20
   Conditions:
   - TargerWithin{d=10}
-
+  Skills:
+  - blockwave{d=75;material=packed_ice;r=3.7;rY=5;v=20;shape=sphere} @PIR{r=12}
+  - delay 5
+  - damage{ia=true;a=0.5} @EIR{r=8}
+  
 Swipe:
   Conditions:
   - PlayerWithin{d=5} true
