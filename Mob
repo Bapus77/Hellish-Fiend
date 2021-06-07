@@ -33,17 +33,16 @@ Hellish Fiend:
     AlwaysShowName: true
     KnockbackResistance: 1
   BossBar:
-      Enabled: true
-      Title: '&6Hellish Fiend'
-      Range: 50
-      Color: RED
-      Style: SEGMENTED_6
-      DarkenSky: true
+    Enabled: true
+    Title: '&6Hellish Fiend'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    DarkenSky: true
   DamageModifiers:
   - FIRE 0
   - FIRE_TICKS 0
   - LAVA 0
-  - DROWN 2
   Drops:
   - Demon_Flesh 4to10 1
   - Fiendish_Necklace 1 0.2
