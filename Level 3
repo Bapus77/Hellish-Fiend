@@ -1,9 +1,9 @@
 HypothermicZombie:
   Type: ZOMBIE
-  Display: '&m&6Guard'
-  Health: 200
-  Damage: 7
-  Armor: 7
+  Display: '&6GateKeeper'
+  Health: 350
+  Damage: 9
+  Armor: 7.5
   AIGoalSelectors:
   - 0 clear
   - 1 float
@@ -23,25 +23,27 @@ HypothermicZombie:
   - Skill{s=LastStand} @PIR{r=15} =5%
   - Skill{s=Sacrifice} @Self ~onDeath
   Options:
-    MovementSpeed: 0.56
-    FollowRange: 30
+    MovementSpeed: 0.6
+    FollowRange: 40
     AlwaysShowName: true
-    KnockbackResistance: 0.3
+    KnockbackResistance: 0.4
     ShowHealth: true
   BossBar:
     Enabled: true
-    Title: '&6Guard'
+    Title: '&6GateKeeper'
     Range: 50
     Color: RED
     Style: SOLID
   DamageModifiers:
   - FIRE 1.2
   - FIRE_TICKS 1.2
-  - LAVA 1.7
+  - LAVA 1.6
   Drops:
-  - Death_Key 1 0.1
+  - Final_lock 1 0.1
   - ZombieDrops 1
-  - exp 700 1
+  - exp 1500 1
+  - diamond_ore 3 to 7 0.8
+  - iron_ingot 10 to 34 1
   
   
 SpeedingStrike:
@@ -55,8 +57,14 @@ SpeedingStrike:
   
 SingleShot:
   Skills:
-  - pr
-  
+  - projectile{i=1;bulletType=ITEM;material;iron_nugget;vS=1;hS=2;v=35;oT=SSTick;oH=SSHit} @Target
+SSTick:
+  Skills:
+  - effect:particleline{p=flame;a=20;s=0.7;hS=0.1;vS=0.1;y=2} @Target
+SSHit:
+  Skills:
+  - damage{ia=true;a=6}
+  - effect:partcles{p=explosion_small;a=30;s=0;hS=2;vS=2.8}
   
 Acid:
   Conditions:
@@ -76,7 +84,7 @@ SummonGuard:
   Conditions:
   - mobsInRadius{types=FreezingZombie;amount=0;radius=100}
   Skills:
-  - summon{type=FREEZINGZOMBIE;a4;r=9;y=1} @Self
+  - summon{type=FREEZINGZOMBIE;a=4;r=9;y=1} @Self
   
 SumoSmash:
   Cooldown: 25
@@ -98,18 +106,18 @@ Swipe:
   
 Sacrifice:
   Skills:
-  - projectile{i=1;bulletType=TOTEM;vS=1;hS=2;v=35;oT=SSTick;oH=SSHit;oE=SSEND} @Target
-SSTick: 
+  - projectile{i=1;bulletType=TOTEM;vS=1;hS=2;v=35;oT=STick;oH=SHit;oE=SEND} @Target
+STick: 
   Skills:
   - effect:particles:p=reddust;a=130;s=0;vS=1;hS=2
   - sound{entity.blaze.shoot} @origin
-SSHit:
+SHit:
   Skills:
   - damage{ia=true;a=7} 
   - stun{d=10}
   - effect:black_screen{d=20} @Target
   - potion{type:CONFUSION;d=10;l=4}
-SSEnd:
+SEnd:
   Skills:
   - effect:particles{p=explosion_medium;a=40;c=#AA00AA} @origin
   - delay 20
