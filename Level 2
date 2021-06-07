@@ -58,12 +58,18 @@ Acid:
   - effect:particles{p=squid_ink;c=#AA0000;a=30;y=0.15;xo=-1;zo=0.2} @Target
   - potion{type:POISON;d=20;l=3} @PIR{r=10}
 
-
+SummonWeakling:
+  Skills:
+  - summon{type=COOLZOMBIE,a=4;r=6;y=1} @Self
   
+SumoSmash:
+  Cooldown: 20
+  Conditions:
+  - TargerWithin{d=10}
 
 Swipe:
   Conditions:
-  - PlayerWithin{r=5} true
+  - PlayerWithin{d=5} true
   Skills:
   - dropitem{i=HAND} @PIR{r=5}
   - dropitem{i=CHEST} @PIR{r=5}
