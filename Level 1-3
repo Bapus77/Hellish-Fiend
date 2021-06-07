@@ -1,3 +1,18 @@
+
+Wither Chad:
+  Type: WITHER_SKELETON
+  Display: '&6&eWither_Chad
+  Health: 30
+  Damage: 4
+  Armor: 1
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - float
+  Equipment:
+  - GOLD_SWORD HAND
+  - IRON_BOOTS FEET
+
 Level 3:
 
 HypothermicZombie:
@@ -79,8 +94,10 @@ Acid:
 SummonWeakling:
   Conditions:
   - mobsInRadius{types=CoolZombie;amount=0;radius=100}
+  - mobsInRadius{types=WitherChad;amount=0;radius=100}
   Skills:
-  - summon{type=COOLZOMBIE,a=5;r=6;y=1} @Self
+  - summon{type=COOLZOMBIE;a=5;r=6;y=1} @Self
+  - summon{type=WITHERCHAD;a=4;r=5;y=1] @Self
   
 SummonGuard:
   Conditions:
