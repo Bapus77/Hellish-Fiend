@@ -17,7 +17,7 @@ CoolZombie:
   - Skill{s=Screech} @EIR{r=10} <75%
   - Skill{s=Run} @Self
   - Skill{s=Swipe} @Target
-  - Skill{s=Sacrifice} @Self
+  - Skill{s=Sacrifice} @Self ~onDeath
   Options:
     MovementSpeed: 0.47
     FollowRange: 20
@@ -80,7 +80,23 @@ Swipe:
   
 Sacrifice:
   Skills:
-  - 
+  - sound{block.tnt.explode} @Self
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magci;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - damage{a=15} @PIR{r=8}
   
   
   
