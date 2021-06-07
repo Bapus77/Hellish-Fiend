@@ -1,0 +1,133 @@
+HypothermicZombie:
+  Type: ZOMBIE
+  Display: '&m&6Guard'
+  Health: 200
+  Damage: 7
+  Armor: 7
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  - 2 meleeattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 threatholder
+  Skills:
+  - Skill{s=SpeedingStrike} @Target
+  - Skill{s=SingleShot} @Target
+  - Skill{s=Acid} @EIR{r=10} <30%
+  - Skill{s=SummonWeakling} @Self
+  - Skill{s=SummonGuard} @Self
+  - Skill{s=SumoSmash} @Target 
+  - Skill{s=Swipe} @Target
+  - Skill{s=LastStand} @PIR{r=15} =5%
+  - Skill{s=Sacrifice} @Self ~onDeath
+  Options:
+    MovementSpeed: 0.56
+    FollowRange: 30
+    AlwaysShowName: true
+    KnockbackResistance: 0.3
+    ShowHealth: true
+  BossBar:
+    Enabled: true
+    Title: '&6Guard'
+    Range: 50
+    Color: RED
+    Style: SOLID
+  DamageModifiers:
+  - FIRE 1.2
+  - FIRE_TICKS 1.2
+  - LAVA 1.7
+  Drops:
+  - Death_Key 1 0.1
+  - ZombieDrops 1
+  - exp 700 1
+  
+  
+SpeedingStrike:
+  Skills:
+  - effect:particles{p=villager_angry;c=#FFFFFF;a=20;s=0;hS=0.2;vS=0.1} @origin
+  - damage{a=14} 
+  - delay 5
+  - teleport @Target{xo=5}
+  - effect:particles{p=villager_angry;c=#FFFFFF;a=20;s=0;hS=0.2;vS=0.1} @origin
+  - damage{a=17} 
+  
+SingleShot:
+  Skills:
+  - pr
+  
+  
+Acid:
+  Conditions:
+  - TargetInLineOfSight true
+  - PlayerWithin{r=9} true
+  Skills:
+  - effect:particles{p=squid_ink;c=#AA0000;a=30;y=0.15;xo=-1;zo=0.2} @Target
+  - potion{type:POISON;d=25;l=3} @PIR{r=10}
+
+SummonWeakling:
+  Conditions:
+  - mobsInRadius{types=CoolZombie;amount=0;radius=100}
+  Skills:
+  - summon{type=COOLZOMBIE,a=5;r=6;y=1} @Self
+  
+SummonGuard:
+  Conditions:
+  - mobsInRadius{types=FreezingZombie;amount=0;radius=100}
+  Skills:
+  - summon{type=FREEZINGZOMBIE;a4;r=9;y=1} @Self
+  
+SumoSmash:
+  Cooldown: 25
+  Conditions:
+  - TargerWithin{d=12}
+  Skills:
+  - blockwave{d=90;material=packed_ice;r=3.7;rY=5;v=20;shape=sphere} @PIR{r=12}
+  - delay 10
+  - damage{ia=true;a=0.6} @EIR{r=8}
+  
+Swipe:
+  Conditions:
+  - PlayerWithin{d=5} true
+  Skills:
+  - dropitem{i=HAND} @PIR{r=5}
+  - dropitem{i=CHEST} @PIR{r=5}
+  - dropitem{i=FEET} @PIR{r=5}
+  - effect:particlesphere{p=redstone;a=40;r=4;y=2;d=10} @Self
+  
+Sacrifice:
+  Skills:
+  - projectile{i=1;bulletType=TOTEM;vS=1;hS=2;v=35;oT=SSTick;oH=SSHit;oE=SSEND} @Target
+SSTick: 
+  Skills:
+  - effect:particles:p=reddust;a=130;s=0;vS=1;hS=2
+  - sound{entity.blaze.shoot} @origin
+SSHit:
+  Skills:
+  - damage{ia=true;a=7} 
+  - stun{d=10}
+  - effect:black_screen{d=20} @Target
+  - potion{type:CONFUSION;d=10;l=4}
+SSEnd:
+  Skills:
+  - effect:particles{p=explosion_medium;a=40;c=#AA00AA} @origin
+  - delay 20
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magci;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - damage{a=15} @PIR{r=8}
+  
+  
