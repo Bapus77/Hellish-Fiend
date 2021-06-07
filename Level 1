@@ -13,6 +13,11 @@ Level 1:
   - 1 players
   - 2 threatholder
   Skills:
+  - Skill{s=Arrow} @Target
+  - Skill{s=Screech} @EIR{r=10}
+  - Skill{s=Run} @Self
+  - Skill{s=Swipe} @Target
+  - Skill{s=Sacrifice} @Self
   Options:
     MovementSpeed: 0.47
     FollowRange: 20
@@ -32,3 +37,7 @@ Level 1:
   - Dark_Key{display 1 0.1
   - ZombieDrops 1
   - exp 400 1
+  
+  
+Arrow:
+ Skills:
