@@ -55,7 +55,7 @@ AHit:
   - damage{ia=true;a=0.5}
 AEnd:
   Skills:
-  - effectLparticlesphere{p=item_crack;a=20}
+  - effect:particlesphere{p=item_crack;a=20}
   
 Screech:
   Skills:
