@@ -1,0 +1,147 @@
+Level 3:
+
+HypothermicZombie:
+  Type: ZOMBIE
+  Display: '&6GateKeeper'
+  Health: 350
+  Damage: 9
+  Armor: 7.5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  - 2 meleeattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 threatholder
+  Skills:
+  - Skill{s=SpeedingStrike} @Target
+  - Skill{s=SingleShot} @Target
+  - Skill{s=Acid} @EIR{r=10} <30%
+  - Skill{s=SummonWeakling} @Self
+  - Skill{s=SummonGuard} @Self
+  - Skill{s=SumoSmash} @Target 
+  - Skill{s=Swipe} @Target
+  - Skill{s=LastStand} @PIR{r=15} =5%
+  - Skill{s=Sacrifice} @Self ~onDeath
+  Options:
+    MovementSpeed: 0.6
+    FollowRange: 40
+    AlwaysShowName: true
+    KnockbackResistance: 0.4
+    ShowHealth: true
+  BossBar:
+    Enabled: true
+    Title: '&6GateKeeper'
+    Range: 50
+    Color: RED
+    Style: SOLID
+  DamageModifiers:
+  - FIRE 1.2
+  - FIRE_TICKS 1.2
+  - LAVA 1.6
+  Drops:
+  - Final_lock 1 0.1
+  - ZombieDrops 1
+  - exp 1500 1
+  - diamond_ore 3 to 7 0.8
+  - iron_ingot 10 to 34 1
+  
+  
+SpeedingStrike:
+  Skills:
+  - effect:particles{p=villager_angry;c=#FFFFFF;a=20;s=0;hS=0.2;vS=0.1} @origin
+  - damage{a=14} 
+  - delay 5
+  - teleport @Target{xo=5}
+  - effect:particles{p=villager_angry;c=#FFFFFF;a=20;s=0;hS=0.2;vS=0.1} @origin
+  - damage{a=17} 
+  
+SingleShot:
+  Skills:
+  - projectile{i=1;bulletType=ITEM;material;iron_nugget;vS=1;hS=2;v=35;oT=SSTick;oH=SSHit} @Target
+SSTick:
+  Skills:
+  - effect:particleline{p=flame;a=20;s=0.7;hS=0.1;vS=0.1;y=2} @Target
+SSHit:
+  Skills:
+  - damage{ia=true;a=6}
+  - effect:partcles{p=explosion_small;a=30;s=0;hS=2;vS=2.8}
+  
+Acid:
+  Conditions:
+  - TargetInLineOfSight true
+  - PlayerWithin{r=9} true
+  Skills:
+  - effect:particles{p=squid_ink;c=#AA0000;a=30;y=0.15;xo=-1;zo=0.2} @Target
+  - potion{type:POISON;d=25;l=3} @PIR{r=10}
+
+SummonWeakling:
+  Conditions:
+  - mobsInRadius{types=CoolZombie;amount=0;radius=100}
+  Skills:
+  - summon{type=COOLZOMBIE,a=5;r=6;y=1} @Self
+  
+SummonGuard:
+  Conditions:
+  - mobsInRadius{types=FreezingZombie;amount=0;radius=100}
+  Skills:
+  - summon{type=FREEZINGZOMBIE;a=4;r=9;y=1} @Self
+  
+SumoSmash:
+  Cooldown: 25
+  Conditions:
+  - TargerWithin{d=12}
+  Skills:
+  - blockwave{d=90;material=packed_ice;r=3.7;rY=5;v=20;shape=sphere} @PIR{r=12}
+  - delay 10
+  - damage{ia=true;a=0.6} @EIR{r=8}
+  
+Swipe:
+  Conditions:
+  - PlayerWithin{d=5} true
+  Skills:
+  - dropitem{i=HAND} @PIR{r=5}
+  - dropitem{i=CHEST} @PIR{r=5}
+  - dropitem{i=FEET} @PIR{r=5}
+  - effect:particlesphere{p=redstone;a=40;r=4;y=2;d=10} @Self
+  
+Sacrifice:
+  Skills:
+  - projectile{i=1;bulletType=TOTEM;vS=1;hS=2;v=35;oT=STick;oH=SHit;oE=SEND} @Target
+STick: 
+  Skills:
+  - effect:particles:p=reddust;a=130;s=0;vS=1;hS=2
+  - sound{entity.blaze.shoot} @origin
+SHit:
+  Skills:
+  - damage{ia=true;a=7} 
+  - stun{d=10}
+  - effect:black_screen{d=20} @Target
+  - potion{type:CONFUSION;d=10;l=4}
+SEnd:
+  Skills:
+  - effect:particles{p=explosion_medium;a=40;c=#AA00AA} @origin
+  - delay 20
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magci;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - delay 1
+  - effect:particles{particle=crit_magic;a=50;hs=0.1;vs=1;s=0.5} @Self
+  - damage{a=15} @PIR{r=8}
+  
+  
+  
+  Level 2:
+  
+  
