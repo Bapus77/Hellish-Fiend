@@ -88,15 +88,7 @@ DeathRings
   - ignite{d=100;r=6}
   - damage{ia=true;a=5;r=6}
   
-BackHand
-  Skills:
-  - teleport @PIR{r=10;limit=1}
-  - effect:particles{p=explosion_medium;a=15} @EIR{r=5;limit=1}
-  - effect:particles{p=crit_magic;amount=2;y=1.5} @self
-  - damage{a=7} @PIR{r=10;limit=1}
-  - sound{s=entity.ghast.shoot} @self
-  - sound{s=entity.ghast.shoot} @self
-  - sound{s=entity.ghast.shoot} @self
+
 
 UnholyBrigade 
   Skills:
@@ -106,7 +98,7 @@ UnholyBrigade
   - Skill{s=Earthquake} @PIR{r=7}
   - Skill{s=SummonLesserFiend} @Self
 
-DeathlyGlance
+DeathlyGlance:
   Skills: 
   - projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
   - effect:particles{particle=dragon_breath;a=100;y=0;vs=0.5;hs=0.2;s=0.5} @Target
@@ -123,7 +115,7 @@ SummonLesserFiend
   - summon{type=Lesser_Fiend;r=5;a=5;yr=0} @Self
   - sound{entity.baby.zombie.growl} @Self
 
-Overlord
+Overlord:
   Conditions:
   - Cooldown: 40
   Skills:
@@ -184,32 +176,62 @@ DemonicBurn
   - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=5;vs=0.4;tyo=1.5;xo=3;y=1.5} @Self
   - ignite{d=50}
   - damage{a=20}
-  - effect:particleline{p=flame;a=1;fo=true;points=40;s=0;hs=0.4;vs=5;tyo=1.5;xo=3} @Self
+  - effect:particleline{p=flame;a=32;fo=true;points=40;s=0;hs=0.4;vs=5;tyo=1.5;xo=3} @Self
   - ignite{d=50}
   - damage{a=20}
   - effect:enderbeam;p=crit_magic;a=50;s=1;hs=0.3;vs=0.8;y=1.3} @Target
   - ignite{d=120}
   - damage{a=20;pkb=true}
-  - effect:geyser{type=LAVA;height=10;speed=15} @Target
+  - effect:geyser{type=LAVA;height=10;s=15} @Target
   - ignite{d=175}
   - damage{ia=true;a=1.5;pkb=true}
 
 
+UndeadSpike:
+  Skills:
+  - projectile{onTick=UTick;onHit=UHit;onEnd=UEnd;v=25;i=1;hR=6;vR=2} ~onTimer:40 @Target
+UTick:
+  Skills:
+  - effect:geyser{type:STONE;height=6} @Target
+  - delay 2
+  - effect:particles{p=sweep_attack;a=50;s=0.4;hs=7;vs=2.7} ~onTimer:50 @origin
+  - ignite{d=40} @PIR{r=4;limit=2}
+  - effect:geyser{type=LAVA;height=4;s=5;xo=2} @origin
+  - effect:geyser{type=LAVA;height=4;s=5;xo=-2} @origin
+  - effect:geyser{type=LAVA;height=4;s=5;zo=2} @origin
+  - effect:geyser{type=LAVA;height=4;s=5;xo=-2} @origin
+UHit:
+  Skills:
+  - damage{a=10;pi=false;pkb=true} ~onTimer: 60
+  - stun{d=100}
+  - potion{type:SLOWNESS;d=10;l=1}
+UEnd:
+  Conditions:
+  - HasPotioneffect{SLOWNESS} true
+  Skills:
+  - message{m="<mob.name>&f<&co> DIE!!"} @PIR{r=40}
+  - message{m="<mob.name>&f<&co> You will all perish by my hand"} @PIR{r=40}
+  - Skill{s=BackHand} @Target
+  
+BackHand
+  Skills:
+  - teleport @PIR{r=10;limit=1}
+  - effect:particles{p=explosion_medium;a=15} @EIR{r=5;limit=1}
+  - effect:particles{p=crit_magic;amount=2;y=1.5} @self
+  - damage{a=7} @PIR{r=10;limit=1}
+  - sound{s=entity.ghast.shoot} @self
+  - sound{s=entity.ghast.shoot} @self
+  - sound{s=entity.ghast.shoot} @self
+  - message{m="<mob.name>&f<f&co> watch your friend squeal, you weaklings"} @PIR{r=40}
+  
+ 
+  
+  
+  
+  
+
     
-    
-    
-    
-ExplosionChampion:
-    Cooldown: 30
-    Conditions:
-    - offgcd
-    Skills:
-    - message{m="<mob.name>&f<&co> Your heart is about to burst!"} @PlayersInRadius{r=40}
-    - delay 10
-    - explosion{yield=6;bd=true;fire=true} @Target
-    - GCD{ticks=120}
-    
-GrimazingScythe
+GrimazingScythe:
   Skills:
   - message{m="<mob.name>&f<&co> Now watch your friend fly into the sunset!"} @PIR{r=40}
   - delay 5
@@ -228,6 +250,7 @@ GrimazingScythe
   - effect:particlesphere{p=portal;r=3;y=1.2;xo=4;d=10} @Self
   - delay 10
   - Skill{s=Enderbeam} @Target
+  - delay 20
   - Skill {s=Dehydration} @EIR{r=10;limit=3}
   
 Enderbeam
@@ -237,7 +260,7 @@ Enderbeam
   - effect:particles{p=dust;c=#FF5555}
   - potion{type:INSTANT_HEALTH;d=3;l=2} @Self ~onTimer:20
     
-dehydration
+dehydration:
   Skills:
   - effect:particlesphere{p=dripWater;r=3;y=1.2;d=10} @Target
   - delay 20
@@ -252,6 +275,21 @@ dehydration
   - damage{amount=1;ia=true;pk=false;pi=false} @target ~onTimer:20
   - effect:particles{particle=dripWater;amount=5;hS=1;vS=1;speed=5} @Target
   - potion{type:REGENERATION;d=5;l=3} @Self
+
+
+BedrockBolt:
+  Skills:
+  - projectile{onTick=BBTick;onHit=BBHit;onEnd=BBEnd;v=50;i=1;hR=1.4;vR=0.8}
+BBTick:
+  Skills:
+  - effect:particles{p=falling_dust;amount=30;speed=0;hS=0.5;vS=0.8} @origin
+BBHit:
+  Skills:
+  - damage{ia=true;a=10;pi=false}
+  - potion{type=INCREASE_DAMAGE;duration=10;lvl=2}
+BBEnd:
+  Skills:
+  - effect:particlesphere{p=portal;c=#FF0000;s=10;hS=1;vS=0.2} @origin
 
 
 
