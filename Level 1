@@ -1,4 +1,4 @@
-Level 1:
+CoolZombie:
   Type: ZOMBIE
   Display: '&eWeakling'
   Health: 80
@@ -14,7 +14,7 @@ Level 1:
   - 2 threatholder
   Skills:
   - Skill{s=Arrow} @Target
-  - Skill{s=Screech} @EIR{r=10}
+  - Skill{s=Screech} @EIR{r=10} <75%
   - Skill{s=Run} @Self
   - Skill{s=Swipe} @Target
   - Skill{s=Sacrifice} @Self
@@ -40,4 +40,33 @@ Level 1:
   
   
 Arrow:
- Skills:
+  Conditions:
+  - LineOfSight true
+  Skills:
+  - projectile{onTick=ATick;onHit=AHit;onEnd=AEnd;v=15;i=1;hR=0.5;vR=0.5} @Target
+ATick:
+  Skills:
+  - effect:particebox{p=current_down;a=50;r=2;y=1} @Target 
+  - delay 5
+  - effect:enderbeam{p=portal;c=#AA0000;a=50;hS=0.2;vS=1;d=40} @Target
+  - stun{d=20}
+AHit:
+  Skills:
+  - damage{ia=true;a=0.5}
+AEnd:
+  Skills:
+  - effectLparticlesphere{p=item_crack;a=20}
+  
+Screech:
+  Skills:
+  - sound{entity.ghast.shoot;p=10;v=4} @EIR{r=20}
+  - potion{tpye:CONFUSION;d=10;l=2} @PIR{r=15}
+  - damage{a=5;pkb=true} @PIR{r=10}
+  
+Run:
+  Skills:
+  
+  
+ 
+  
+  
