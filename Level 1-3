@@ -44,42 +44,7 @@ PSHit:
   - damage{ia=true;a=1}
   - explosion{yield=1;fire=true} 
   
-Sharpshooters Helmet:
-  Data: 0
-  Display: '&6Sharpshooters Helmet'
-  Lore:
-  - 'A basic helmet wore by'
-  - 'entry level archers!'
-  - ''
-  - '&eDurability 300/300'
-  Attributes:
-    Mainhand:
-      Armor: 2
-  Skills:
-  - Skill{s=ArchersGrace} @Self
-  
-ArchersGrace:
-  Skills:
-  potion{type:SPEED;d=2;l=1} @Self ~onTimer:20
-  potion{type:INCREASE_DAMAGE;d=2;l=1} @Self ~onTimer:20
 
-
-
-FlintBoltRain:
-  Conditions:
-  - TargetWithin 15
-  - TargetInLineOfSight
-  Skills:
-  - projectile{i=1;type:METEOR;material:gold_nugget;hfs=100;oT=FBTick;oH=FBHit;mr=5;v=50} @Target
-FBTick:
-  Skills:
-  - effect:particlebox{p=drip_water;r=5;points=40;y=0.2} @Target
-  - effect:particles{p=cloud;a=20;s=1;hs=0.1;vs=0.1} @Target
-  - delay 20
-FBHit:
-  Skills:
-  - damage{a=2}
-  - damage{ia=true;a=2}
 
   
   
