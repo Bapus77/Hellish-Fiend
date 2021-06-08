@@ -1,7 +1,7 @@
 
 Wither Chad:
   Type: WITHER_SKELETON
-  Display: '&6&eWither_Chad
+  Display: '&6&eWither_Chad'
   Health: 30
   Damage: 4
   Armor: 1
@@ -12,6 +12,63 @@ Wither Chad:
   Equipment:
   - GOLD_SWORD HAND
   - IRON_BOOTS FEET
+
+SharpShooter:
+  Type: SKELETON
+  Display: '&eSharpShooter'
+  Health: 25
+  Damage: 5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  -2 meleeattack
+  Equipment:
+  - SHARPSHOOTERS_HELMET
+  - REFINED_BOW
+  Drops:
+  - SkeletonDrops 1
+  - Refined_Bow 1 0.1
+  - Sharpshooters_Helmet 1 0.07
+  - exp 100 1
+  Skills: 
+  - Skill{s=PiercingShot} @Target
+  
+PiercingShot:
+  Skills:
+  - projectile{i=1;oT=PSTick;oH=PSHit;bulletType=ITEM;material=stick;v=20;vS=0.3;hS=1.3} @Target
+PSTick:
+  Skills:
+  - effect:particles{p=dragon_breath;a=40;s=1;vS=0.2;hS=0.3} @Target
+PSHit:
+  Skills:
+  - damage{ia=true;a=1}
+  - explosion{yield=1;fire=true} 
+  
+Sharpshooters Helmet:
+  Data: 0
+  Display: '&6Sharpshooters Helmet'
+  Lore:
+  - 'A basic helmet wore by'
+  - 'entry level archers!'
+  - ''
+  - '&eDurability 300/300'
+  Attributes:
+    Mainhand:
+      AttackSpeed: 2
+  Skills:
+  - Skill{s=FlintBoltRain} ~onAttack
+
+FlintBoltRain:
+  Skills:
+  
+  
+  
+  
+  
+NecroZombie:
+  type: ZOMBIE
+  
+
 
 Level 3:
 
@@ -74,7 +131,7 @@ SpeedingStrike:
   
 SingleShot:
   Skills:
-  - projectile{i=1;bulletType=ITEM;material;iron_nugget;vS=1;hS=2;v=35;oT=SSTick;oH=SSHit} @Target
+  - projectile{i=1;bulletType=ITEM;material=iron_nugget;vS=1;hS=2;v=35;oT=SSTick;oH=SSHit} @Target
 SSTick:
   Skills:
   - effect:particleline{p=flame;a=20;s=0.7;hS=0.1;vS=0.1;y=2} @Target
