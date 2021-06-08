@@ -54,12 +54,33 @@ Sharpshooters Helmet:
   - '&eDurability 300/300'
   Attributes:
     Mainhand:
-      AttackSpeed: 2
+      Armor: 2
   Skills:
-  - Skill{s=FlintBoltRain} ~onAttack
+  - Skill{s=ArchersGrace} @Self
+  
+ArchersGrace:
+  Skills:
+  potion{type:SPEED;d=2;l=1} @Self ~onTimer:20
+  potion{type:INCREASE_DAMAGE;d=2;l=1} @Self ~onTimer:20
+
+
 
 FlintBoltRain:
+  Conditions:
+  - TargetWithin 15
+  - TargetInLineOfSight
   Skills:
+  - projectile{i=1;type:METEOR;material:gold_nugget;hfs=100;oT=FBTick;oH=FBHit;mr=5;v=50} @Target
+FBTick:
+  Skills:
+  - effect:particlebox{p=drip_water;r=5;points=40;y=0.2} @Target
+  - effect:particles{p=cloud;a=20;s=1;hs=0.1;vs=0.1} @Target
+  - delay 20
+FBHit:
+  Skills:
+  - damage{a=2}
+  - damage{ia=true;a=2}
+
   
   
   
@@ -182,7 +203,7 @@ Swipe:
   
 Sacrifice:
   Skills:
-  - projectile{i=1;bulletType=TOTEM;vS=1;hS=2;v=35;oT=STick;oH=SHit;oE=SEND} @Target
+  - projectile{i=1;bulletType=METEOR;hfs=50;vS=1;hS=2;v=35;oT=STick;oH=SHit;oE=SEND} @Target
 STick: 
   Skills:
   - effect:particles:p=reddust;a=130;s=0;vS=1;hS=2
