@@ -123,7 +123,7 @@ Overlord:
 
 Laser:
   Skills:
-  - projectile{i=1;type=totem;oT=LaserTick;oH=LaserHit;oE=LaserEnd;mr=5;sE=false;v=100} @Target
+  - projectile{i=1;type:METEOR;material:gold_nugget;hfs=100;oT=LaserTick;oH=LaserHit;oE=LaserEnd;mr=5;sE=false;v=100} @Target
 LaserTick:
   Skills:
   - effect:particlering{p=flame;r=5;points=40} @origin
