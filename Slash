@@ -1,0 +1,26 @@
+
+
+Slash:
+  Skills:
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;d=200} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=0.2;xo=0.2} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=0.4;xo=0.4} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=0.6;xo=0.6} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=0.8;xo=0.8} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=1;xo=1} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=1.2;xo=1.2} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=1.4;xo=1.4} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=1.6;xo=1.6} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=1.8;xo=1.8} @Forwards{f=5;y=1}
+  - delay 5
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;yo=2;xo=2} @Forwards{f=5;y=1}
+  
