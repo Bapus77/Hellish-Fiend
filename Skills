@@ -233,7 +233,7 @@ DeathPull:
   - TargetWithin{r=25} true
   Skills:
   - effect:geyser{type=LAVA;height=2;s=3} @Target
-  - projectile{bulletType:BLOCK;m=stone;onTick=DPTick;onHit=DPHit;onEnd=DPEnd;v=50;i=1;hR=0.5;vR=0.5} @Target
+  - projectile{bulletType:BLOCK;m=STONE;onTick=DPTick;onHit=DPHit;onEnd=DPEnd;v=50;i=1;hR=0.5;vR=0.5} @Target
   - effect:geyser{type=BLOCK;m=stone;h=1s=1} @Target
   - stun{d=100} @Target
   - delay 20
@@ -241,7 +241,15 @@ DeathPull:
   
 Exorcism:
   Skills:
-  -
+  - projectile{type:METEOR;bulletType:ITEM;m=DIAMOND_SWORD;onTick=ETick;onHit;EHit;oEnd=EEnd;v=20;i=1;hR=0.5;vD=2;d=50;y=10} @Target
+  
+ETick:
+  Skills:
+  - effect:particlering{p=flame;a=100;r=5;y=1.2
+  - delay 40
+ 
+ 
+
   
   
   
