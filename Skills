@@ -226,7 +226,9 @@ BackHand
   - sound{s=entity.ghast.shoot} @self
   - delay 5
   - message{m="<mob.name>&f<f&co> watch your friend squeal, you weaklings"} @PIR{r=40}
-  
+ 
+ 
+                (trigger for second phase) 
 DeathPull:
   Conditions:
   - TargetNotWithin{r=10} true
@@ -245,8 +247,40 @@ Exorcism:
   
 ETick:
   Skills:
-  - effect:particlering{p=flame;a=100;r=5;y=1.2
-  - delay 40
+  - effect:particlering{p=flame;a=100;r=5;y=1.2;hS=0.5;vS=0.5;s=0.01} ~onTimer:5
+  - stun{d=100} @PIR{r=5;limit=2}
+  - delay 20
+  
+EHit:
+  Skills:
+  - damage{ia=true;a=0.7;pkb=true}
+  - ignite{d=50} @PIR{r=10}
+  - explosion{yield=3;f=true} @Target
+  
+EEnd:
+  Skills:
+  - Skill{s=ExpandingRing} @Self
+  - delay 100
+  - potion{type:DAMAGE_INCREASE;d=200;l=2} @Self
+  - Skill{s=Bolt}
+  
+ExpandingRing:
+  Skills:
+  - effect:particlering{p=flame;a=200;r=4;y=5
+  
+Bolt:
+  Skills:
+  - projectile{bulletType=ITEM;m=IRON_NUGGET;onTick=BTick;onHit=BHit;onEnd=BEnd;v=50;i=1;hR=1.4;vR=0.8;repeat=5;repeatinterval=10} @Target
+BTick:
+  Skills:
+  - effect:particles{p=falling_dust;amount=30;speed=0.1;hS=0.5;vS=0.3} @origin
+BHit:
+  Skills:
+  - damage{ia=true;a=10}
+BEnd:
+  Skills:
+  - effect:particlesphere{p=portal;c=#FF0000;s=10;hS=1;vS=0.2} @origin
+
  
  
 
@@ -302,17 +336,16 @@ dehydration:
   - potion{type:REGENERATION;d=5;l=3} @Self
 
 
-BedrockBolt:
+Bolt:
   Skills:
-  - projectile{onTick=BBTick;onHit=BBHit;onEnd=BBEnd;v=50;i=1;hR=1.4;vR=0.8}
-BBTick:
+  - projectile{onTick=BTick;onHit=BHit;onEnd=BEnd;v=50;i=1;hR=1.4;vR=0.8}
+BTick:
   Skills:
   - effect:particles{p=falling_dust;amount=30;speed=0;hS=0.5;vS=0.8} @origin
-BBHit:
+BHit:
   Skills:
   - damage{ia=true;a=10;pi=false}
-  - potion{type=INCREASE_DAMAGE;duration=10;lvl=2}
-BBEnd:
+BEnd:
   Skills:
   - effect:particlesphere{p=portal;c=#FF0000;s=10;hS=1;vS=0.2} @origin
 
