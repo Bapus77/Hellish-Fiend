@@ -1,0 +1,12 @@
+VenomousChomp:
+  Conditions:
+  - TargetWithin{r=4} true
+  Skills:
+  - sound{s=entity.spider.ambient;v=1.5} @Self
+  - delay 10
+  - potion{type:HUNGER;d=100;l=2} @Targer
+  - potion{type:POISON;d=150;l=1} @Target
+  - delay 10
+  - effect:particlesphere{p=portal;size=2;a=30;r=3;y=0.6;hS=0.1;vS=0.1;s=0.01} @Self
+  - effect:particlesphere{p=crit;a=100;r=0.4;y=0.2;hS=0.3;vS=0.1;s=0.1} @Foward{f=3}
+  - sound{s=entity.spider.damaged} @Self
