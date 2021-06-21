@@ -220,11 +220,28 @@ BackHand
   - effect:particles{p=crit_magic;amount=2;y=1.5} @self
   - damage{a=7} @PIR{r=10;limit=1}
   - sound{s=entity.ghast.shoot} @self
+  - delay 1
   - sound{s=entity.ghast.shoot} @self
+  - delay 1
   - sound{s=entity.ghast.shoot} @self
+  - delay 5
   - message{m="<mob.name>&f<f&co> watch your friend squeal, you weaklings"} @PIR{r=40}
   
- 
+DeathPull:
+  Conditions:
+  - TargetNotWithin{r=10} true
+  - TargetWithin{r=25} true
+  Skills:
+  - effect:geyser{type=LAVA;height=2;s=3} @Target
+  - projectile{bulletType:BLOCK;m=stone;onTick=DPTick;onHit=DPHit;onEnd=DPEnd;v=50;i=1;hR=0.5;vR=0.5} @Target
+  - effect:geyser{type=BLOCK;m=stone;h=1s=1} @Target
+  - stun{d=100} @Target
+  - delay 20
+  - Skill{s=Exorcism} @Target
+  
+Exorcism:
+  Skills:
+  -
   
   
   
@@ -253,7 +270,7 @@ GrimazingScythe:
   - delay 20
   - Skill {s=Dehydration} @EIR{r=10;limit=3}
   
-Enderbeam
+Enderbeam:
   Skills:
   - effect{effect=enderbeam;d=7;xo=4;y=1.2} @Target
   - damage{ia=true;a=2;pi=true;pkb=true}
