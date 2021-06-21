@@ -33,7 +33,7 @@ UpwardsSlash:
   - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=2.8;y=1} @Forward{f=5}
   - delay 1
   - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=3;y=1} @Forward{f=5}
-  
+
 SideSlash:
   Skills:
   - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=0.2} @Forward{f=5}
@@ -66,6 +66,30 @@ SideSlash:
   - delay 1
   - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=3} @Forward{f=5}
   - delay 1
+  
+  
+  
+BetterSideSlash:
+  Skills:
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=3;zo=3;xo=-3} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=3;zo=3;xo=-2.95} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.95;zo=3;xo=-2.9} @Target
+  - delay 1
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.9;zo=3;xo=-2.85} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.85;zo=3;xo=-2.8} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.75;zo=3;xo=-2.75} @Target
+  - delay 1
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.7;zo=3;xo=-2.7} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.65;zo=3;xo=-2.65} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.6;zo=3;xo=-2.6} @Target
+  - delay 1
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.55;zo=3;xo=-2.55} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.5;zo=3;xo=-2.5} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.45;zo=3;xo=-2.45} @Target
+  - delay 1
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.4;zo=3;xo=-2.4} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.35;zo=3;xo=-2.35} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.3;zo=3;xo=-2.3} @Target
   
   
   
