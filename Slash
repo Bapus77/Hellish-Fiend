@@ -1,26 +1,72 @@
 
 
-Slash:
+UpwardsSlash:
   Skills:
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;d=200} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.2} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.4} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.6} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.8} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.2} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.4} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.6} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.8} @Forwards{f=5;y=1}
-  - delay 5
-  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=2} @Forwards{f=5;y=1}
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;d=200;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.2;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.4;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.6;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=0.8;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.2;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.4;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.6;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=1.8;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=2;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;size=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=2.2;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=2.4;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=2.6;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=2.8;y=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=cloud;a=20;s=5;hS=0.2;vS=0.5;s=0.01;y=1;d=200;xo=3;y=1} @Forward{f=5}
+  
+SideSlash:
+  Skills:
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=0.2} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=0.4} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=0.6} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=0.8} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=1} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=1.2} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=1.4{ @Forward{f=5}
+  - delay 1
+  effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=1.6} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=1.8} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=2} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=2.2} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=2.4} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=2.6} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=2.8} @Forward{f=5}
+  - delay 1
+  - effect:particles{p=flame;a=20;size=5;s=0.01;d=100;hS=0.2;vS=0.2;y=1;xo=3} @Forward{f=5}
+  - delay 1
+  
+  
+  
   
