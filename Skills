@@ -247,8 +247,9 @@ Exorcism:
   
 ETick:
   Skills:
-  - effect:particlering{p=flame;a=100;r=5;y=1.2;hS=0.5;vS=0.5;s=0.01} ~onTimer:5
-  - stun{d=100} @PIR{r=5;limit=2}
+  - effect:particlering{p=flame;a=100;r=5;y=1.2;hS=0.5;vS=0.5;s=0.01} @PIR{r=7;limit=2}
+  - delay 5
+  - stun{d=100} @PIR{r=7;limit=2}
   - delay 20
   
 EHit:
@@ -266,7 +267,8 @@ EEnd:
   
 ExpandingRing:
   Skills:
-  - effect:particlering{p=flame;a=200;r=4;y=5
+  - effect:particlering{p=flame;a=200;r=4;y=5;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
   
 Bolt:
   Skills:
