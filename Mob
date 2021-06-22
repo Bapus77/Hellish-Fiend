@@ -1,8 +1,9 @@
 Hellish Fiend:
   Type: ZOMBIE
   Display: '&6Hellish Fiend'
-  Health: 800
+  Health: 1000
   Damage: 15
+  Armor: 3.5
   AIGoalSelectors:
   - 0 clear
   - 1 float
