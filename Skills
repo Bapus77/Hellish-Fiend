@@ -226,6 +226,8 @@ BackHand
   - sound{s=entity.ghast.shoot} @self
   - delay 5
   - message{m="<mob.name>&f<f&co> watch your friend squeal, you weaklings"} @PIR{r=40}
+  - stun{d=100;f=true} @Target
+  - ignite{d=100} @Target
  
  
                 (trigger for second phase) 
@@ -269,6 +271,27 @@ ExpandingRing:
   Skills:
   - effect:particlering{p=flame;a=200;r=4;y=5;hS=0.3;vS=0.5;s=0.3} @Self
   - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=4.5;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=4;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=3.5;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=3;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=2.5;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=2;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=1.5;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=1;hS=0.3;vS=0.5;s=0.3} @Self
+  - delay 10
+  - effect:particlering{p=flame;a=200;r=4;y=0.5;hS=0.3;vS=0.5;s=0.3} @Self
+  
+  
+  
+  
   
 Bolt:
   Skills:
