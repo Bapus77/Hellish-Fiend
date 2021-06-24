@@ -262,10 +262,23 @@ EHit:
   
 EEnd:
   Skills:
-  - Skill{s=ExpandingRing} @Self
-  - delay 100
-  - potion{type:DAMAGE_INCREASE;d=200;l=2} @Self
   - Skill{s=Bolt}
+  - potion{type:DAMAGE_INCREASE;d=200;l=2} @Self
+  - delay 50
+  - Skill{s=ExpandingRing} @Self
+
+Bolt:
+  Skills:
+  - projectile{bulletType=ITEM;m=IRON_NUGGET;onTick=BTick;onHit=BHit;onEnd=BEnd;v=50;i=1;hR=1.4;vR=0.8;repeat=5;repeatinterval=10} @Target
+BTick:
+  Skills:
+  - effect:particles{p=falling_dust;amount=30;speed=0.1;hS=0.5;vS=0.3} @origin
+BHit:
+  Skills:
+  - damage{ia=true;a=10}
+BEnd:
+  Skills:
+  - effect:particlesphere{p=portal;c=#FF0000;s=10;hS=1;vS=0.2} @origin
   
 ExpandingRing:
   Skills:
@@ -288,19 +301,13 @@ ExpandingRing:
   - effect:particlering{p=flame;a=200;r=4;y=1;hS=0.3;vS=0.5;s=0.3} @Self
   - delay 10
   - effect:particlering{p=flame;a=200;r=4;y=0.5;hS=0.3;vS=0.5;s=0.3} @Self
-
-Bolt:
-  Skills:
-  - projectile{bulletType=ITEM;m=IRON_NUGGET;onTick=BTick;onHit=BHit;onEnd=BEnd;v=50;i=1;hR=1.4;vR=0.8;repeat=5;repeatinterval=10} @Target
-BTick:
-  Skills:
-  - effect:particles{p=falling_dust;amount=30;speed=0.1;hS=0.5;vS=0.3} @origin
-BHit:
-  Skills:
-  - damage{ia=true;a=10}
-BEnd:
-  Skills:
-  - effect:particlesphere{p=portal;c=#FF0000;s=10;hS=1;vS=0.2} @origin
+  - delay 10
+  - setstance{stance=PHASE_2}
+  
+  PHASE_2:
+    Skills:
+    - Skill{s=Haunt} @PIR{r=20}
+    
 
  
  
