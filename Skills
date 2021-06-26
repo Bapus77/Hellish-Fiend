@@ -239,10 +239,10 @@ ExpandingRing:
     Skills:
     - Skill{s=Haunt} @PIR{r=20} ~onTimer:350
     - Skill{RingsOfDeath} @Self ~onTimer:50
-    - Skill{s=Hellish_Blaze} @Self ~onDamaged
+    - Skill{s=HellishBlaze} @Self ~onDamaged
     
     
-Combust
+HellishBlaze:
   Skills:
   - message{m="<mob.name><&co> Arhh! I will level this world, whether you like it or not!" @PIR{r=40}
   - sound{block.tnt.explode} @Self
@@ -261,7 +261,12 @@ Combust
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
   - delay 1
   - effect:particles{particle=flame;a=100;hs=0.1;vs=1;s=0.05} @Self
-
+  - delay 20
+  - effect:particles{p=explosion_large;a=100;s=0.01;hS=0.4;vS=0.2;size=2} @Self
+  - delay 20
+  - potion{type:DAMAGE_RESISTANCE;d=200;l=2} @Self
+  - delay 5
+  - effect:particles{p=explosion_small;a=75;s=0.1;size=3;hS=0.3;vS=0.5;c=#FF8C00;y=0.5;zo=0.5;xo}
  
  
 RingsOfDeath:
@@ -311,6 +316,7 @@ RingsOfDeath:
   - effect:particlering{particle=reddust;radius=6;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
   - ignite{d=100;r=6}
   - damage{ia=true;a=5;r=6}
+  
   
   
   
