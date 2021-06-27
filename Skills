@@ -3,28 +3,28 @@
 
 
 Skills:
-  - Skill{s=Hellgift} @Self >700 0.1
+  - Skill{s=Hellsgift} @Self =90%
   - Skill{s=UnholyBrigade} @Target =100
   - Skill{s=LucifersRage} @PIR{r=10} >400 0.05
   - Skill{s=SinningTornado} @Self <650 0.05
   - Skill{s=UndeadSpike} @Target =400
-  - Skill{s=DeathsPull} @PIR{r=20} 0.05
+  - Skill{s=DeathsPull} @PIR{r=20} =70%
   - Skill{s=SinnersGrace} @Self  ~onTimer: 800
   - Skill{s=Overlord} @Target 0.1
   - Skill{s=GrimacingScythe} @Target 0.1
 
-Hellgift
+Hellsgift
   Skills:
   - potion{type:INSTANT_HEALTH;d=1;l=10} @Self
   - potion{type:INCREASE_DAMAGE;d=50;l=50} @Self
   - effect:particles{particle=flame;a=50;hs=0.2;vs=0.8;y=1;s=0.1}
   - sound{entity.end.rod} @Self
-  - Skill{s=Combust} @Self
+  - effect:particlesphere{p=squid_ink;a=75;size=1.2;s=0.5;hS=0.8;vS=0.3;mr=6;y=0.8
 
 UnholyBrigade 
   Skills:
   - effect:particles{particle=cloud;a=70;mr=10;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2;d=5} @Self
-  - damage{a=10}
+  - damage{a=10} @PIR[r=10;limit=2}
   - Skill{s=DeathylGlance} @Target
   - Skill{s=Earthquake} @PIR{r=7}
   - Skill{s=SummonLesserFiend} @Self
@@ -32,7 +32,11 @@ UnholyBrigade
 DeathlyGlance:
   Skills: 
   - projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
-  - effect:particles{particle=dragon_breath;a=100;y=0;vs=0.5;hs=0.2;s=0.5} @Target
+  - effect:particles{particle=dragon_breath;a=100;y=1.2;vS=0.5;hS=0.2;s=0.5} @Target
+
+DGTick:
+  Skills:
+  - effect:particleline
 
 Earthquake
   Skills:
@@ -267,6 +271,13 @@ HellishBlaze:
   - potion{type:DAMAGE_RESISTANCE;d=200;l=2} @Self
   - delay 5
   - effect:particles{p=explosion_small;a=75;s=0.1;size=3;hS=0.3;vS=0.5;c=#FF8C00;y=0.5;zo=0.5;xo}
+ 
+UnholySentiment:
+  Skills:
+  - Projectile{onTick=endertick;onHit=enderhit;hO=0;i=1;v=8}
+
+
+ 
  
  
 RingsOfDeath:
