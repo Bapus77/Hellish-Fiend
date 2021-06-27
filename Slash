@@ -71,25 +71,138 @@ SideSlash:
   
 BetterSideSlash:
   Skills:
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=3;zo=3;xo=-3} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=3;zo=3;xo=-2.95} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.95;zo=3;xo=-2.9} @Target
-  - delay 1
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.9;zo=3;xo=-2.85} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.85;zo=3;xo=-2.8} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.75;zo=3;xo=-2.75} @Target
-  - delay 1
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.7;zo=3;xo=-2.7} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.65;zo=3;xo=-2.65} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.6;zo=3;xo=-2.6} @Target
-  - delay 1
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.55;zo=3;xo=-2.55} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.5;zo=3;xo=-2.5} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.45;zo=3;xo=-2.45} @Target
-  - delay 1
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.4;zo=3;xo=-2.4} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.35;zo=3;xo=-2.35} @Target
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.3;zo=3;xo=-2.3} @Target
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=3;zo=3;xo=-3} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=3;zo=3;xo=-2.95} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.95;zo=3;xo=-2.9} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.9;zo=3;xo=-2.85} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.85;zo=3;xo=-2.8} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.75;zo=3;xo=-2.75} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.7;zo=3;xo=-2.7} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.65;zo=3;xo=-2.65} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.6;zo=3;xo=-2.6} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.55;zo=3;xo=-2.55} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.5;zo=3;xo=-2.5} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.45;zo=3;xo=-2.45} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.4;zo=3;xo=-2.4} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.35;zo=3;xo=-2.35} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.3;zo=3;xo=-2.3} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.25;zo=3;xo=-2.25} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.2;zo=3;xo=-2.2} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.15;zo=3;xo=-2.15} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.1;zo=3;xo=-2.1} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2.05;zo=3;xo=-2.05} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=2;zo=3;xo=-2} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.95;zo=3;xo=-1.95} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.9;zo=3;xo=-1.9} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.8;zo=3;xo=-1.8} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.75;zo=3;xo=-1.75} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.7;zo=3;xo=-1.7} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.65;zo=3;xo=-1.65} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.6;zo=3;xo=-1.6} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.55;zo=3;xo=-1.55} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.5;zo=3;xo=-1.5} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.45;zo=3;xo=-1.45} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.4;zo=3;xo=-1.4} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.35;zo=3;xo=-1.35} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.3;zo=3;xo=-1.3} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.25;zo=3;xo=-1.25} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.2;zo=3;xo=-1.2} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.15;zo=3;xo=-1.15} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+   ct:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.21zo=3;xo=-1.25} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.2;zo=3;xo=-1.2} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 5
+  
+  
   
   
   
