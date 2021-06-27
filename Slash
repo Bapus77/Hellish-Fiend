@@ -69,7 +69,7 @@ SideSlash:
   
   
   
-BetterSideSlash:
+FlamingSlash:
   Skills:
   - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=3;zo=3;xo=-3} @Self
   - damage{a=1;pi=true} @Target ~onHit
@@ -194,13 +194,19 @@ BetterSideSlash:
   - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.15;zo=3;xo=-1.15} @Self
   - damage{a=1;pi=true} @Target ~onHit
   - ignite{d=40} @Target ~onHit
-   ct:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.21zo=3;xo=-1.25} @Self
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.1;zo=3;xo=-1.1} @Self
   - damage{a=1;pi=true} @Target ~onHit
   - ignite{d=40} @Target ~onHit
-  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.2;zo=3;xo=-1.2} @Self
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1.05;zo=3;xo=-1.05} @Self
   - damage{a=1;pi=true} @Target ~onHit
   - ignite{d=40} @Target ~onHit
   - delay 5
+  - effect:particles{p=flame;a=100;s=0.01;d=40;hS=0.1;vS=0.1;y=1;zo=3;xo=-1} @Self
+  - damage{a=1;pi=true} @Target ~onHit
+  - ignite{d=40} @Target ~onHit
+  - delay 60
+  - blockwave{d=100;m=magma_block;r=3;radiusY=3.5;v=50;shape=sphere} @PIR{r=5;limit=1}
+  - damage{ia=true;a=5;pkb=true} @Target
   
   
   
