@@ -279,43 +279,43 @@ RingsOfDeath:
   - delay 1
   - effect:particlering{particle=reddust;radius=1.5;points=48;amount=1;hS=1;vS=0;y=0.1;color=#AA0000} @self
   - ignite{d=100;r=1.5}
-  - damage{ia=true;a=5} @PIR{r=1}
+  - damage{ia=true;a=5} @PIR{r=1.5}
   - delay 1
   - effect:particlering{particle=reddust;radius=2;points=64;amount=1;hS=1;vS=0;y=0.3;color=#AA0000} @self
   - ignite{d=100;r=2}
-  - damage{ia=true;a=5;r=2}
+  - damage{ia=true;a=5} @PIR{r=2}
   - delay 1
   - effect:particlering{particle=reddust;radius=2.5;points=80;amount=1;hS=1;vS=0;y=0.5;color=#AA0000} @self
   - ignite{d=100;r=2.5}
-  - damage{ia=true;a=5;r=2.5}
+  - damage{ia=true;a=5} @PIR{r=2.5}
   - delay 1
   - effect:particlering{particle=reddust;radius=3;points=96;amount=1;hS=1;vS=0;y=0.8;color=#AA0000} @self
   - ignite{d=100;r=3}
-  - damage{ia=true;a=5;r=3}
+  - damage{ia=true;a=5} @PIR{r=3}
   - delay 1
   - effect:particlering{particle=reddust;radius=3.5;points=112;amount=1;hS=1;vS=0;y=1.1;color=#AA0000} @self
   - ignite{d=100;r=3.5}
-  - damage{ia=true;a=5;r=3.5}
+  - damage{ia=true;a=5} @PIR{r=3.5}
   - delay 1
   - effect:particlering{particle=reddust;radius=4;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
   - ignite{d=100;r=4}
-  - damage{ia=true;a=5;r=4}
+  - damage{ia=true;a=5} @PIR{r=4}
   - delay 1
   - effect:particlering{particle=reddust;radius=4.5;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100;r=4.5}
-  - damage{ia=true;a=5;r=4.5}
+  - ignite{d=100} @PIR{r=4.}
+  - damage{ia=true;a=5} @PIR{r=4.5}
   - delay 1
   - effect:particlering{particle=reddust;radius=5;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100;r=5}
-  - damage{ia=true;a=5;r=5}
+  - ignite{d=100} @PIR{r=5}
+  - damage{ia=true;a=5} @PIR{r=5}
   - delay 1
   - effect:particlering{particle=reddust;radius=5.5;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100;r=5.5}
-  - damage{ia=true;a=5;r=5.5}
+  - ignite{d=100} @PIR{r=5.5}
+  - damage{ia=true;a=5} @PIR{r=5.5}
   - delay 1
   - effect:particlering{particle=reddust;radius=6;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100;r=6}
-  - damage{ia=true;a=5;r=6}
+  - ignite{d=100} @PIR{r=6}
+  - damage{ia=true;a=5} @PIR{r=6}
   
   
   
