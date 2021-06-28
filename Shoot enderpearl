@@ -1,0 +1,21 @@
+EnderShot:
+  Skills:
+  - shoot{type=ENDERPEARL;v=30;d=10;pav=false;md=20;oT=ENDERTick;oH=ENDERHit;oE=ENDEREnd;hS=0.5;vS=1}
+  
+ENDERTick:
+  Skills:
+  - delay 10
+  - effect:particleline{p=portal;hS=0;vS=0;s=0.2;a=30;repeat=8;repeatinterval=5} @Origin
+  
+ENDERHit:
+  Skills:
+  - teleport{spreadh=0.5;spreadv=0.5} @Origin
+  - damage{a=10;pi=true}
+  - delay 10
+  - effect:particlering{p=flame;c=#FF55FF;a=100;y=1;s=0.2;hS=0.2;vS=0.2;repeat=10;repeatinterval=10} @Target
+  
+ENDEREnd:
+  Skills:
+  - explosion{yield=3;f=true} @Target
+  - delay 20
+  - effect{effect=enderbeam;p=bubbles;a=100;s=0.5;hS=1;vS=1} @Target
