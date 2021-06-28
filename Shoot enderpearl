@@ -18,4 +18,4 @@ ENDEREnd:
   Skills:
   - explosion{yield=3;f=true} @Target
   - delay 20
-  - effect{effect=enderbeam;p=bubbles;a=100;s=0.5;hS=1;vS=1} @Target
+  - effect{effect=enderbeam;p=bubble;a=100;s=0.5;hS=1;vS=1} @Target
