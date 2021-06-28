@@ -3,40 +3,35 @@
 
 
 Skills:
-  - Skill{s=Hellsgift} @Self =90%
+  - Skill{s=Hellgift} @Self >700 0.1
   - Skill{s=UnholyBrigade} @Target =100
   - Skill{s=LucifersRage} @PIR{r=10} >400 0.05
-  - Skill{s=SinningTornado} @Self <650 0.05
   - Skill{s=UndeadSpike} @Target =400
   - Skill{s=DeathsPull} @PIR{r=20} =70%
   - Skill{s=SinnersGrace} @Self  ~onTimer: 800
   - Skill{s=Overlord} @Target 0.1
   - Skill{s=GrimacingScythe} @Target 0.1
 
-Hellsgift
+Hellgift
   Skills:
   - potion{type:INSTANT_HEALTH;d=1;l=10} @Self
   - potion{type:INCREASE_DAMAGE;d=50;l=50} @Self
   - effect:particles{particle=flame;a=50;hs=0.2;vs=0.8;y=1;s=0.1}
   - sound{entity.end.rod} @Self
-  - effect:particlesphere{p=squid_ink;a=75;size=1.2;s=0.5;hS=0.8;vS=0.3;mr=6;y=0.8
+  - Skill{s=Combust} @Self
 
 UnholyBrigade 
   Skills:
   - effect:particles{particle=cloud;a=70;mr=10;y=1.5;vs=0.1;hs=0.2;s=0.8;fo=0.2;so=0.2;d=5} @Self
-  - damage{a=10} @PIR[r=10;limit=2}
-  - Skill{s=DeathylGlance} @Target
+  - damage{a=10}
+  ##- Skill{s=DeathylGlance} @Target
   - Skill{s=Earthquake} @PIR{r=7}
   - Skill{s=SummonLesserFiend} @Self
 
-DeathlyGlance:
-  Skills: 
-  - projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
-  - effect:particles{particle=dragon_breath;a=100;y=1.2;vS=0.5;hS=0.2;s=0.5} @Target
-
-DGTick:
-  Skills:
-  - effect:particleline
+##DeathlyGlance:
+  ##Skills: 
+  ##- projectile{i=1;oT=DGTick;oH=DGHit;mr=30;tyo=0.9;sE=false;v=75} @Target
+  ##- effect:particles{particle=dragon_breath;a=100;y=0;vs=0.5;hs=0.2;s=0.5} @Target
 
 Earthquake
   Skills:
@@ -241,9 +236,10 @@ ExpandingRing:
   
   PHASE_2:
     Skills:
-    - Skill{s=Haunt} @PIR{r=20} ~onTimer:350
-    - Skill{RingsOfDeath} @Self ~onTimer:50
-    - Skill{s=HellishBlaze} @Self ~onDamaged
+    - Skill{s=Haunt} @PIR{r=20} ~onTimer:400 0.3
+    - Skill{RingsOfDeath} @Self =40%
+    - Skill{s=HellishBlaze} @Self ~onDamaged <40% 0.1
+    - Skill{s=Rekindle} @Self
     
     
 HellishBlaze:
@@ -270,62 +266,58 @@ HellishBlaze:
   - delay 20
   - potion{type:DAMAGE_RESISTANCE;d=200;l=2} @Self
   - delay 5
-  - effect:particles{p=explosion_small;a=75;s=0.1;size=3;hS=0.3;vS=0.5;c=#FF8C00;y=0.5;zo=0.5;xo}
- 
-UnholySentiment:
-  Skills:
-  - Projectile{onTick=endertick;onHit=enderhit;hO=0;i=1;v=8}
-
-
- 
- 
+  
+  - effect:particles{p=explosion_small;a=75;s=0.1;size=3;hS=0.3;vS=0.5;c=#FF8C00;y=0.5;zo=0.5;xo=0.5} @Self
+  - effect:particles{p=explosion_small;a=75;s=0.1;size=3;hS=0.3;vS=0.5;c=#FF8C00;y=0.5;zo=-0.5;xo=-0.5} @Self
+  - effect:particles{p=explosion_small;a=75;s=0.1;size=3;hS=0.3;vS=0.5;c=#FF8C00;y=0.5;zo=1;xo=1} @Self
+  - effect:particles{p=explosion_small;a=75;s=0.1;size=3;hS=0.3;vS=0.5;c=#FF8C00;y=0.5;zo=-1;xo=-1} @Self
  
 RingsOfDeath:
   Skills:
   - message{m="<mob.name><&co> All those who are near me..."} @PIR{r=40}
   - message{m="<mob.name><&co> will die!"} @PlayersInRadius{r=40}
-  - effect:particlering{particle=reddust;radius=1;points=32;amount=100;hS=1;vS=0;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=1}
+  - effect:particlering{particle=reddust;radius=1;points=32;amount=1;hS=1;vS=0;color=#AA0000} @self
+  - ignite{d=100;r=1}
   - damage{ia=true;a=5} @PIR{r=1}
   - delay 1
-  - effect:particlering{particle=reddust;radius=1.5;points=48;amount=100;hS=1;vS=0;y=0.1;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=1.5}
+  - effect:particlering{particle=reddust;radius=1.5;points=48;amount=1;hS=1;vS=0;y=0.1;color=#AA0000} @self
+  - ignite{d=100;r=1.5}
   - damage{ia=true;a=5} @PIR{r=1.5}
   - delay 1
-  - effect:particlering{particle=reddust;radius=2;points=64;amount=100;hS=1;vS=0;y=0.3;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=2}
+  - effect:particlering{particle=reddust;radius=2;points=64;amount=1;hS=1;vS=0;y=0.3;color=#AA0000} @self
+  - ignite{d=100;r=2}
   - damage{ia=true;a=5} @PIR{r=2}
   - delay 1
-  - effect:particlering{particle=reddust;radius=2.5;points=80;amount=100;hS=1;vS=0;y=0.5;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=2.5}
+  - effect:particlering{particle=reddust;radius=2.5;points=80;amount=1;hS=1;vS=0;y=0.5;color=#AA0000} @self
+  - ignite{d=100;r=2.5}
   - damage{ia=true;a=5} @PIR{r=2.5}
   - delay 1
-  - effect:particlering{particle=reddust;radius=3;points=96;amount=100;hS=1;vS=0;y=0.8;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=3}
+  - effect:particlering{particle=reddust;radius=3;points=96;amount=1;hS=1;vS=0;y=0.8;color=#AA0000} @self
+  - ignite{d=100;r=3}
   - damage{ia=true;a=5} @PIR{r=3}
   - delay 1
-  - effect:particlering{particle=reddust;radius=3.5;points=112;amount=100;hS=1;vS=0;y=1.1;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=3.5}
+  - effect:particlering{particle=reddust;radius=3.5;points=112;amount=1;hS=1;vS=0;y=1.1;color=#AA0000} @self
+  - ignite{d=100;r=3.5}
   - damage{ia=true;a=5} @PIR{r=3.5}
   - delay 1
-  - effect:particlering{particle=reddust;radius=4;points=128;amount=100;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=3.5}
+  - effect:particlering{particle=reddust;radius=4;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
+  - ignite{d=100;r=4}
   - damage{ia=true;a=5} @PIR{r=4}
   - delay 1
-  - effect:particlering{particle=reddust;radius=4.5;points=128;amount=100;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=4.5}
+  - effect:particlering{particle=reddust;radius=4.5;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
+  - ignite{d=100;r=4.5}
   - damage{ia=true;a=5} @PIR{r=4.5}
   - delay 1
-  - effect:particlering{particle=reddust;radius=5;points=128;amount=100;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=5}
+  - effect:particlering{particle=reddust;radius=5;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
+  - ignite{d=100;r=5}
   - damage{ia=true;a=5} @PIR{r=5}
   - delay 1
-  - effect:particlering{particle=reddust;radius=5.5;points=128;amount=100;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=5.5}
+  - effect:particlering{particle=reddust;radius=5.5;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
+  - ignite{d=100;r=5.5}
   - damage{ia=true;a=5} @PIR{r=5.5}
   - delay 1
-  - effect:particlering{particle=reddust;radius=6;points=128;amount=100;hS=1;vS=0;y=1.4;color=#AA0000} @self
-  - ignite{d=100} @PIR{r=6}
+  - effect:particlering{particle=reddust;radius=6;points=128;amount=1;hS=1;vS=0;y=1.4;color=#AA0000} @self
+  - ignite{d=100;r=6}
   - damage{ia=true;a=5} @PIR{r=6}
   
   
@@ -358,8 +350,7 @@ GrimazingScythe:
   
 Enderbeam:
   Skills:
-  - effect{effect=enderbeam;d=100;xo=4;y=1.2} @Target
-  - effect{effect=enderbeam;d=100;xo=-4;y=1.2} @Target
+  - effect{effect=enderbeam;d=7;xo=4;y=1.2} @Target
   - damage{ia=true;a=2;pi=true;pkb=true}
   - effect:particles{p=dust;c=#FF5555}
   - potion{type:INSTANT_HEALTH;d=3;l=2} @Self ~onTimer:20
