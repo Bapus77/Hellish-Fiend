@@ -19,3 +19,20 @@ ENDEREnd:
   - explosion{yield=3;f=true} @Target
   - delay 20
   - effect{effect=enderbeam;p=bubble;a=100;s=0.5;hS=1;vS=1} @Target
+
+
+
+
+EnderShot:
+  Skills:
+  - shoot{type=ENDERPEARL;v=30;d=10;pav=false;md=20;oT=ENDERTick;oH=ENDERHit;hS=0.5;vS=1} @Forward{f=15}
+  
+ENDERTick:
+  Skills:
+  - delay 10
+  - effect:particleline{p=portal;hS=0;vS=0;s=0.2;a=30;repeat=8;repeatinterval=5} @Origin
+  
+ENDERHit:
+  Skills:
+  - teleport{spreadh=0.5;spreadv=0.5} 
+  
