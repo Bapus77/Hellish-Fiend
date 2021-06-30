@@ -1,0 +1,51 @@
+DESERT MOBS:
+
+ForgottenVillager:
+  type: ZOMBIE_VILLAGER
+  Display: '&4Forgotten Villager'
+  Health: 20
+  Damage: 3
+  Options:
+  FollowRange: 20
+  MovementSpeed:0.15
+  Skills:
+  - Skill{s=SandyFist} @Self ~onTimer:20
+  
+SandyFist:
+  Skills:
+  - effect:particles{p=falling_dust;a=10;vS=0.1;s=0.05;xo=0.2;y=1.5} @Self 
+  - effect:particles{p=falling_dust;a=10;vS=0.1;s=0.05;xo=-0.2;y=1.5} @Self
+  
+  
+SandPhantom:
+  Type: PHANTOM
+  Display: '&1&jSand Phantom'
+  Health: 15
+  Damage: 5
+  AITargetSelectors:
+  - 0 clear
+  - 1 meleeattack
+  Options:
+  PreventSunburn: true
+  FollowRange: 20
+  Skills:
+  - Skill{s=SandstoneWing} @Target =50%
+  
+SandstoneWing:
+  Skills:
+  - effect:particles{p=dragon_breath;a=20} ~onTimer:5
+  - damage{ia=true;a=3;pi=true} ~onAttack     
+  
+  
+SandHog:
+  type: HOGLIN
+  Display: '&9&hSand Hog'
+  Health:40
+  Damage: 4.5
+  Armor: 2
+  AITaregtSelectors:
+  
+  AIGoalSelectors:
+  
+  
+  
