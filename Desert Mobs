@@ -15,6 +15,7 @@ SandyFist:
   Skills:
   - effect:particles{p=falling_dust;a=10;vS=0.1;s=0.05;xo=0.2;y=1.5} @Self 
   - effect:particles{p=falling_dust;a=10;vS=0.1;s=0.05;xo=-0.2;y=1.5} @Self
+  - damage{a=5;repeat=2;repeatinterval=30} @Target ~onAttack
   
   
 SandPhantom:
@@ -34,8 +35,8 @@ SandPhantom:
   
 SandstoneWing:
   Skills:
-  - effect:particles{p=dragon_breath;a=20} ~onTimer:5
-  - damage{ia=true;a=3;pi=true} ~onAttack     
+  - effect:particles{p=dragon_breath;a=20} @Self ~onTimer:5
+  - damage{ia=true;a=3;pi=true} @Target ~onAttack     
   
   
 SandHog:
