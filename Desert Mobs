@@ -22,9 +22,10 @@ SandPhantom:
   Display: '&1&jSand Phantom'
   Health: 15
   Damage: 5
-  AITargetSelectors:
+  AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
+  - 2 avoidarrows
   Options:
   PreventSunburn: true
   FollowRange: 20
@@ -46,6 +47,9 @@ SandHog:
   AITaregtSelectors:
   
   AIGoalSelectors:
-  
+  - 0 clear
+  - 1 randomlookaround
+  - 2 breakdoors
+  - 3 randomstroll
   
   
