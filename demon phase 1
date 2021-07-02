@@ -1,0 +1,23 @@
+PHASE_1:
+  Skills:
+  - Skill{s=Anguished_Lightning} @PIR[r=40} 
+  - Skill{s=Terra_Shield} @Self
+  
+Anguished_Lightning:
+  Skills:
+  - lightning{d=20;repeat=20;repeatinterval=15} @PIR{r=40}
+  - ignite{d=100} ~onAttack
+  
+Terra_Shield:
+  Skills:
+  - Skill{s=Threat} @Target
+  - shield{a=50;ma=200} @Self
+  - velocity{x=0;y=2;z=0} @Self 
+  - delay 10
+  - velocity{x=0;y=0;z=0;repeat=10;repeatinterval=10} @Self
+  - delay 20
+  - Skill{Hellstone_Barage} @PIR{r=10;limit=1}
+  
+Threat:
+  Skills:
+  - threat{a=100;m=add} @Nearestplayer
