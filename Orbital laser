@@ -1,0 +1,15 @@
+orbital laser skill
+
+
+OrbitalLaser:
+  conditions:
+  TargetWithin{r=20} true
+  Skills:
+- projectile{type:meteor;bulletType=BLOCK;m=magma_block;hR=3;vR=10;v=50;oT=OLTick;oH=OLHit;oE=OLEnd} @Target
+OLTick:
+  Skills:
+  - effect:particlesphere
+  - effect:particles{p=dragon_breath;a=50;hS=1;vS=1;d=6} @Origin ~onTimer:5
+  - delay 10
+  - effect:particleline
+
