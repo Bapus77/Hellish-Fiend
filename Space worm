@@ -1,0 +1,28 @@
+
+CoolZombie:
+  Type: ENDER_DRAGON
+  Display: '&7Space worm jeff'
+  Health: 250
+  Damage: 5
+  Armor: 4
+  AIGoalSelectors:
+  - 0 clear
+  - movetowardstarget
+  - 1 randomstroll
+  - 2 meleeattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 threatholder
+  Skills:
+  - Skill{s=space_goo} @Target
+  - Skills
+  Options:
+    MovementSpeed: 0.47
+    FollowRange: 60
+    AlwaysShowName: true
+    KnockbackResistance: 1
+  
+  
+  
+  
