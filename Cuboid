@@ -1,0 +1,3 @@
+define loc <context.location>
+- modifyblock <[loc].add[2,-1,2].to_cuboid[<[loc].add[-2,-1,-2]>]> AIR
+ 
