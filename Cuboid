@@ -19,5 +19,12 @@ Drill_Demi_Ability:
     
     
 
-
-
+on player clicks sell-1 in sell-carrot:
+- flag <player> sell-carrot:++
+- flag <>
+- if <player.inventory.contains_item[carrot].quantity<10>>
+  - take item:carrot quantity:<sell-carrot>
+  - give money
+  
+else:
+  narrate "Not enough carrots"
