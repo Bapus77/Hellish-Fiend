@@ -1,11 +1,12 @@
 Drill_Demi_Ability:
   type: world
   events:
-    on player breaks block:
+    on player breaks block with:DemiGod_Drill
     - define loc <context.location>
     - modifyblock <[loc].add[2,-1,2].to_cuboid[<[loc].add[-2,-1,-2]>]> AIR
+    - define break_quantity <blocks.broken.in_cuboid[loc]>
     - define mats <context.material.in_cuboid[<[loc]>]>
-    - give mats quantity:<player.flag[break_quantity]> to <player>
+    - give mats quantity:<[break_quantity]> to <player>
     
     
 
