@@ -2,6 +2,15 @@ Drill_Demi_Ability:
   type: world
   events:
     on player breaks block with:DemiGod_Drill
+  - flag <player> flag_cooldown expire:60s
+  - if <player.flag_expiration[flag_cooldown].from_now.formatted> == 20s:
+    - narrate "You must wait <player.flag_expiration[flag_cooldown].from_now.formatted> until you can use it again."
+  - else if <[loc].has_region>:
+    - narrate "you cant do that here"
+  
+  
+  
+
     - define loc <context.location>
     - modifyblock <[loc].add[2,-1,2].to_cuboid[<[loc].add[-2,-1,-2]>]> AIR
     - define break_quantity <blocks.broken.in_cuboid[loc]>
