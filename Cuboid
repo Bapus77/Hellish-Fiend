@@ -1,3 +1,13 @@
-define loc <context.location>
-- modifyblock <[loc].add[2,-1,2].to_cuboid[<[loc].add[-2,-1,-2]>]> AIR
- 
+Drill_Demi_Ability:
+  type: world
+  events:
+    on player breaks block:
+    - define loc <context.location>
+    - modifyblock <[loc].add[2,-1,2].to_cuboid[<[loc].add[-2,-1,-2]>]> AIR
+    - define mats <context.material.in_cuboid[<[loc]>]>
+    - give mats quantity:<player.flag[break_quantity]> to <player>
+    
+    
+
+
+
