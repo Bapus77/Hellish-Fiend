@@ -29,3 +29,18 @@ on player clicks sell-1 in sell-carrot:
   - flag <player> rep:+:10 
 - else:
   - narrate "Not enough carrots"
+
+
+
+
+
+
+
+
+- flag server rain-acid expire:180s
+- if <server.has_flag[rain-acid].fromnow_formatted>:
+  - flag server bob
+  - flag <player> acid
+  - if <world.name> == pp && <player.has_flag[acid] && <server.has_flag[bob]>:
+    - ratelimit <player> 2s
+    - hurt 2 <player>
